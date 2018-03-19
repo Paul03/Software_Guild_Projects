@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+          http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+          http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+          http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+">
+    
+    <bean id="dvdDao" class="com.mycompany.dvdlibrary.dao.DVDDaoInMemoryImpl" />
+    <bean id="dvdDaoLambda" class="com.mycompany.dvdlibrary.dao.DVDLambdaInMemoryDaoImpl" />
+    
+    <bean id="noteDao" class="com.mycompany.dvdlibrary.dao.NoteDaoInMemoryImpl" >
+        <constructor-arg ref="dvdDao" />
+    </bean>
+    
+    <bean id="dvdController" class="com.mycompany.dvdlibrary.controller.DVDController" >
+        <constructor-arg ref="dvdDao" />
+        <constructor-arg ref="noteDao" />
+    </bean>
+
+</beans>
