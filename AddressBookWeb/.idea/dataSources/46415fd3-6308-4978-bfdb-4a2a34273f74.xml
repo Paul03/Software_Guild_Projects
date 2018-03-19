@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="AddressBook">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="AddressBook">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="agency"/>
+    <schema id="4" parent="1" name="Budget"/>
+    <schema id="5" parent="1" name="capstoneproject"/>
+    <schema id="6" parent="1" name="capstoneproject_test"/>
+    <schema id="7" parent="1" name="ContactList"/>
+    <schema id="8" parent="1" name="contacts"/>
+    <schema id="9" parent="1" name="DvdCollection"/>
+    <schema id="10" parent="1" name="DVDLibrary"/>
+    <schema id="11" parent="1" name="DVDLibrary_test"/>
+    <schema id="12" parent="1" name="FlooringMastery"/>
+    <schema id="13" parent="1" name="FlooringMastery_test"/>
+    <schema id="14" parent="1" name="information_schema"/>
+    <schema id="15" parent="1" name="javaaugust2016"/>
+    <schema id="16" parent="1" name="MoneyManager"/>
+    <schema id="17" parent="1" name="mysql"/>
+    <schema id="18" parent="1" name="performance_schema"/>
+    <schema id="19" parent="1" name="sys"/>
+    <schema id="20" parent="1" name="tutorial1"/>
+    <table id="21" parent="2" name="Address"/>
+    <column id="22" parent="21" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="23" parent="21" name="first_name">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="21" name="last_name">
+      <Position>3</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="21" name="street_address">
+      <Position>4</Position>
+      <DataType>varchar(150)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="21" name="city">
+      <Position>5</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="21" name="state">
+      <Position>6</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="21" name="zip_code">
+      <Position>7</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="29" parent="21" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
