@@ -1,0 +1,37 @@
+.errorMessages {
+    color: red;
+}
+
+.modal-title {
+    text-align: center;
+}
+
+.tableLeftColumn {
+    font-weight: bold;
+    text-align: right;
+}
+
+.validationError {
+    background-color: lightcoral;
+    border: solid red;
+}
+
+#showNotesTableHeader {
+    text-align: center;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.space-20 {
+    height: 20px;
+}
+
+.space-50 {
+    height: 50px;
+}
+
+#add-dvd-div {
+    border: solid;
+}
