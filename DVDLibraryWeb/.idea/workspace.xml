@@ -6,7 +6,36 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c48fffd-8d37-4291-b219-2ccdd0023c99" name="Default" comment="" />
+    <list default="true" id="6c48fffd-8d37-4291-b219-2ccdd0023c99" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/thesoftwareguild/dvdlibraryweb/tests/dao/DvdDaoJUnitTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/controllers/DVDController.java" afterPath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/controllers/DVDController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/controllers/HomeController.java" afterPath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/controllers/HomeController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/controllers/NoteController.java" afterPath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/controllers/NoteController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/DVDDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/DVDDao.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/DVDDaoDbImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/DVDDaoDbImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/DVDDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/DVDDaoImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/DVDDaoInMemoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/DVDDaoInMemoryImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/NoteDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/NoteDao.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/NoteDaoDbImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/NoteDaoDbImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/NoteDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/NoteDaoImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/NoteDaoInMemoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/NoteDaoInMemoryImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dto/AddDVDCommand.java" afterPath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dto/AddDvdCommand.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dto/DVD.java" afterPath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dto/Dvd.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dto/Note.java" afterPath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dto/Note.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dto/SearchDVDCommand.java" afterPath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dto/SearchDvdCommand.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/utility/DVDUtility.java" afterPath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/utility/DateUtility.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/viewmodel/ShowDVDViewModel.java" afterPath="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/viewmodel/ShowDvdViewModel.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/dvdSearch.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/dvdSearch.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/addNote.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/addNote.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/create.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/create.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/delete.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/delete.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/deleteNote.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/deleteNote.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/edit.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/edit.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/editNote.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/editNote.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/home.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/home.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/thesoftwareguild/dvdlibraryweb/tests/dao/NoteDaoJUnitTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/thesoftwareguild/dvdlibraryweb/tests/dao/NoteDaoJUnitTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/thesoftwareguild/dvdlibraryweb/tests/dto/DVDJUnitTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/thesoftwareguild/dvdlibraryweb/tests/dto/DVDJUnitTest.java" />
+    </list>
     <ignored path="DVDLibraryWeb.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -21,26 +50,28 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand />
+    <select />
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="DVDLibraryWeb" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="home.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/home.jsp">
+      <file leaf-file-name="editNote.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/editNote.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="12" column="7" lean-forward="false" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DVDController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/controllers/DVDController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-398">
-              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="31" />
+            <state relative-caret-position="15">
+              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -67,6 +98,9 @@
       <find>addDvdFor</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -75,43 +109,51 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/create.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/delete.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/show.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/header.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/edit.jsp" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/resources/spring-persistence.xml" />
         <option value="$PROJECT_DIR$/src/test/java/com/thesoftwareguild/dvdlibraryweb/tests/dao/NoteDaoJUnitTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/thesoftwareguild/dvdlibraryweb/tests/dao/DVDDaoJUnitTest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-persistence.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dto/SearchDVDCommand.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/thesoftwareguild/dvdlibraryweb/tests/dto/DVDJUnitTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dto/DVD.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/DVDDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/DVDDaoDbImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/DVDDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/DVDDaoInMemoryImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/NoteDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dto/Note.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dto/AddDVDCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/NoteDaoDbImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/NoteDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/NoteDaoInMemoryImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/aop/RequestValidationHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/aop/ValidationError.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/aop/ValidationErrorContainer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/controllers/HomeController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/controllers/NoteController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/viewmodel/ShowDVDViewModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/utility/DVDUtility.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/dvdSearch.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/app.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/home.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/home.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/search.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/navbar.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/controllers/DVDController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/controllers/NoteController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/NoteDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/DVDDaoDbImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/DVDDaoInMemoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/NoteDaoDbImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/NoteDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/NoteDaoInMemoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/utility/DateUtility.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dto/AddDVDCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dto/AddDvdCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dto/DVD.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dto/Dvd.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dto/SearchDVDCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dto/SearchDvdCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/viewmodel/ShowDVDViewModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/viewmodel/ShowDvdViewModel.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/dvdSearch.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/addNote.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/create.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/delete.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/deleteNote.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/edit.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/editNote.jsp" />
       </list>
     </option>
   </component>
@@ -151,6 +193,7 @@
       </profile-state>
     </entry>
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -166,7 +209,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -197,17 +240,7 @@
               <item name="DVDLibraryWeb" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dvdlibraryweb" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DVDLibraryWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DVDLibraryWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dvdlibraryweb" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DVDLibraryWeb" type="b2602c69:ProjectViewProjectNode" />
@@ -215,14 +248,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="jsp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -231,6 +265,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -245,7 +280,62 @@
     </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.DVDLibraryWeb">
-    <configuration name="DVDDaoJUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="passParentEnv" value="true" />
+      <setting name="launchBrowser" value="true" />
+      <setting name="launchBrowserUrl" value="" />
+      <setting name="depsClasspath" value="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+    </configuration>
+    <configuration name="DvdDaoJUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.thesoftwareguild.dvdlibraryweb.tests.dao.*" />
@@ -256,7 +346,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.thesoftwareguild.dvdlibraryweb.tests.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.thesoftwareguild.dvdlibraryweb.tests.dao.DVDDaoJUnitTest" />
+      <option name="MAIN_CLASS_NAME" value="com.thesoftwareguild.dvdlibraryweb.tests.dao.DvdDaoJUnitTest" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -270,7 +360,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="DVDDaoJUnitTest.testAddDvd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DvdDaoJUnitTest.testAddDvd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.thesoftwareguild.dvdlibraryweb.tests.dao.*" />
@@ -281,7 +371,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.thesoftwareguild.dvdlibraryweb.tests.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.thesoftwareguild.dvdlibraryweb.tests.dao.DVDDaoJUnitTest" />
+      <option name="MAIN_CLASS_NAME" value="com.thesoftwareguild.dvdlibraryweb.tests.dao.DvdDaoJUnitTest" />
       <option name="METHOD_NAME" value="testAddDvd" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -295,7 +385,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="DVDDaoJUnitTest.testReadDvd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DvdDaoJUnitTest.testReadDvd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.thesoftwareguild.dvdlibraryweb.tests.dao.*" />
@@ -306,7 +396,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.thesoftwareguild.dvdlibraryweb.tests.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.thesoftwareguild.dvdlibraryweb.tests.dao.DVDDaoJUnitTest" />
+      <option name="MAIN_CLASS_NAME" value="com.thesoftwareguild.dvdlibraryweb.tests.dao.DvdDaoJUnitTest" />
       <option name="METHOD_NAME" value="testReadDvd" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -320,7 +410,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="DVDDaoJUnitTest.testUpdateDvd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DvdDaoJUnitTest.testUpdateDvd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.thesoftwareguild.dvdlibraryweb.tests.dao.*" />
@@ -331,7 +421,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.thesoftwareguild.dvdlibraryweb.tests.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.thesoftwareguild.dvdlibraryweb.tests.dao.DVDDaoJUnitTest" />
+      <option name="MAIN_CLASS_NAME" value="com.thesoftwareguild.dvdlibraryweb.tests.dao.DvdDaoJUnitTest" />
       <option name="METHOD_NAME" value="testUpdateDvd" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -344,6 +434,85 @@
       </option>
       <envs />
       <patterns />
+    </configuration>
+    <configuration name="NoteDaoJUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.thesoftwareguild.dvdlibraryweb.tests.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="DVDLibraryWeb" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.thesoftwareguild.dvdlibraryweb.tests.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.thesoftwareguild.dvdlibraryweb.tests.dao.NoteDaoJUnitTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
     </configuration>
     <configuration name="DVDLibraryWeb" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.37" ALTERNATIVE_JRE_ENABLED="false">
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
@@ -418,153 +587,11 @@
         </option>
       </method>
     </configuration>
-    <configuration name="NoteDaoJUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.thesoftwareguild.dvdlibraryweb.tests.dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="DVDLibraryWeb" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.thesoftwareguild.dvdlibraryweb.tests.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.thesoftwareguild.dvdlibraryweb.tests.dao.NoteDaoJUnitTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-    </configuration>
-    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
-      <setting name="vmparams" value="" />
-      <setting name="cmdLine" value="run-app" />
-      <setting name="passParentEnv" value="true" />
-      <setting name="launchBrowser" value="true" />
-      <setting name="launchBrowserUrl" value="" />
-      <setting name="depsClasspath" value="false" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
@@ -816,21 +843,29 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.DVDLibraryWeb" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.DVDDaoJUnitTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.DVDDaoJUnitTest.testAddDvd" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.DVDDaoJUnitTest.testReadDvd" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.DVDDaoJUnitTest.testUpdateDvd" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.DvdDaoJUnitTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.DvdDaoJUnitTest.testAddDvd" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.DvdDaoJUnitTest.testReadDvd" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.DvdDaoJUnitTest.testUpdateDvd" />
       <item index="5" class="java.lang.String" itemvalue="JUnit.NoteDaoJUnitTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.DVDDaoJUnitTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.DvdDaoJUnitTest" />
         <item index="1" class="java.lang.String" itemvalue="JUnit.NoteDaoJUnitTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.DVDDaoJUnitTest.testUpdateDvd" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.DVDDaoJUnitTest.testReadDvd" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.DVDDaoJUnitTest.testAddDvd" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.DvdDaoJUnitTest.testUpdateDvd" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.DvdDaoJUnitTest.testReadDvd" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.DvdDaoJUnitTest.testAddDvd" />
       </list>
     </recent_temporary>
   </component>
@@ -894,6 +929,7 @@
       <workItem from="1498699672458" duration="160000" />
       <workItem from="1503447086741" duration="18216000" />
       <workItem from="1505256742538" duration="211000" />
+      <workItem from="1521589031695" duration="3168000" />
     </task>
     <servers />
   </component>
@@ -930,7 +966,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100439000" />
+    <option name="totallyTimeSpent" value="103607000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -942,7 +978,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -953,12 +989,13 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35882354" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24930556" sideWeight="0.49503547" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25250357" sideWeight="0.49503547" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947146" sideWeight="0.50496453" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769045" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -969,7 +1006,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6741176" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282353" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -997,55 +1033,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/resources/spring-persistence.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/thesoftwareguild/dvdlibraryweb/tests/dao/DVDDaoJUnitTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/create.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="98" column="56" lean-forward="false" selection-start-line="98" selection-start-column="56" selection-end-line="98" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/delete.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="64" column="61" lean-forward="false" selection-start-line="64" selection-start-column="61" selection-end-line="64" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.2.RELEASE/spring-web-4.3.2.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/show.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-253">
-          <caret line="29" column="45" lean-forward="false" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/edit.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="61" column="33" lean-forward="false" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/aop.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/aop/RequestValidationHandler.aj" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-dbcp2/2.0/commons-dbcp2-2.0.jar!/org/apache/commons/dbcp2/DelegatingResultSet.class">
@@ -1076,113 +1063,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/DVDDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-106">
-          <caret line="234" column="41" lean-forward="false" selection-start-line="234" selection-start-column="41" selection-end-line="234" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/DVDDaoInMemoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="75" column="50" lean-forward="true" selection-start-line="75" selection-start-column="50" selection-end-line="75" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/thesoftwareguild/dvdlibraryweb/tests/dao/DVDDaoJUnitTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/thesoftwareguild/dvdlibraryweb/tests/dao/DvdDaoJUnitTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="106" column="55" lean-forward="true" selection-start-line="106" selection-start-column="55" selection-end-line="106" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dto/SearchDVDCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dto/AddDVDCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="770">
-          <caret line="78" column="33" lean-forward="false" selection-start-line="78" selection-start-column="33" selection-end-line="78" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/NoteDaoDbImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="46" column="25" lean-forward="false" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/NoteDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="53" column="31" lean-forward="true" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/NoteDaoInMemoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="915">
-          <caret line="64" column="49" lean-forward="false" selection-start-line="64" selection-start-column="49" selection-end-line="64" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/aop/RequestValidationHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/aop/ValidationError.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/aop/ValidationErrorContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="61" lean-forward="false" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/controllers/NoteController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1215">
-          <caret line="90" column="5" lean-forward="false" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/npm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/viewmodel/ShowDVDViewModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/utility/DVDUtility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -1195,47 +1079,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/dvdSearch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="70" lean-forward="false" selection-start-line="28" selection-start-column="70" selection-end-line="28" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-          <folding>
-            <element signature="e#12715#14166#0" expanded="false" />
-            <element signature="e#14172#14254#0" expanded="false" />
-            <element signature="e#14333#14690#0" expanded="false" />
-            <element signature="e#14771#14956#0" expanded="false" />
-            <element signature="e#15041#15279#0" expanded="false" />
-            <element signature="e#15365#15467#0" expanded="false" />
-            <element signature="e#15549#15650#0" expanded="false" />
-            <element signature="e#15685#16473#0" expanded="false" />
-            <element signature="e#16511#16652#0" expanded="false" />
-            <element signature="e#16698#17172#0" expanded="false" />
-            <element signature="e#17215#17556#0" expanded="false" />
-            <element signature="e#17598#18290#0" expanded="false" />
-            <element signature="e#18333#18394#0" expanded="false" />
-            <element signature="e#18438#18500#0" expanded="false" />
-            <marker date="1503535399000" expanded="true" signature="15853:16463" ph="..." />
-            <marker date="1503535399000" expanded="true" signature="16570:16642" ph="..." />
-            <marker date="1503535399000" expanded="true" signature="16788:17162" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/header.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/home.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/search.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-658">
@@ -1248,66 +1092,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dto/Note.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="5" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="21" selection-end-column="5" />
-          <folding>
-            <element signature="e#480#481#0" expanded="false" />
-            <element signature="e#509#510#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/DVDDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="31" column="42" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="31" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/NoteDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="44" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="18" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/DVDDaoDbImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1242">
-          <caret line="93" column="50" lean-forward="true" selection-start-line="93" selection-start-column="50" selection-end-line="93" selection-end-column="50" />
-          <folding>
-            <marker date="1503449695000" expanded="true" signature="546:652" ph="INSERT INTO dvd... " />
-            <marker date="1503449695000" expanded="true" signature="706:734" ph="SELECT * FRO... dvd" />
-            <marker date="1503449695000" expanded="true" signature="788:889" ph="UPDATE dvd S... " />
-            <marker date="1503449695000" expanded="true" signature="943:969" ph="DELETE FROM " />
-            <marker date="1503449695000" expanded="true" signature="1027:1059" ph="SELECT * FRO... dvd" />
-            <marker date="1503449695000" expanded="true" signature="1122:1190" ph="SELECT * FRO... dvd" />
-            <marker date="1503449695000" expanded="true" signature="1252:1289" ph="SELECT * FRO... dvd" />
-            <marker date="1503449695000" expanded="true" signature="1348:1382" ph="SELECT * FRO... dvd" />
-            <marker date="1503449695000" expanded="true" signature="1439:1471" ph="SELECT * FRO... dvd" />
-            <marker date="1503449695000" expanded="true" signature="1527:1558" ph="SELECT * FRO... dvd" />
-            <marker date="1503449695000" expanded="true" signature="1613:1672" ph="SELECT YEAR(... " />
-            <marker date="1503449695000" expanded="true" signature="1733:1777" ph="SELECT * FRO... dvd" />
-            <marker date="1503449695000" expanded="true" signature="1838:1881" ph="SELECT * FRO... dvd" />
-            <marker date="1503449695000" expanded="true" signature="2402:2425" ph="SELECT LAST_... " />
-            <marker date="1503449695000" expanded="true" signature="3108:3139" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/home.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="12" column="7" lean-forward="false" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1342,16 +1126,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dto/DVD.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -1360,26 +1134,309 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-persistence.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/home.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="11" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="21" selection-end-column="11" />
+        <state relative-caret-position="15">
+          <caret line="12" column="7" lean-forward="false" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/controllers/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="23" column="57" lean-forward="false" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="57" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/controllers/DVDController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-398">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="31" />
+        <state relative-caret-position="259">
+          <caret line="71" column="31" lean-forward="false" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/controllers/NoteController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="38" column="8" lean-forward="false" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/aop/RequestValidationHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/aop/ValidationError.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/aop/ValidationErrorContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="7" column="61" lean-forward="false" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/DVDDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="32" column="4" lean-forward="true" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/NoteDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/1218328c-00ef-4ac4-b710-99ab9e7f9413/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/DVDDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="412" column="0" lean-forward="true" selection-start-line="412" selection-start-column="0" selection-end-line="412" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/DVDDaoInMemoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="661">
+          <caret line="115" column="21" lean-forward="false" selection-start-line="115" selection-start-column="21" selection-end-line="115" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/DVDDaoDbImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1920">
+          <caret line="138" column="8" lean-forward="false" selection-start-line="138" selection-start-column="8" selection-end-line="138" selection-end-column="8" />
+          <folding>
+            <marker date="1521592131279" expanded="true" signature="547:653" ph="INSERT INTO dvd... " />
+            <marker date="1521592131279" expanded="true" signature="707:735" ph="SELECT * FRO... dvd" />
+            <marker date="1521592131279" expanded="true" signature="789:890" ph="UPDATE dvd S... " />
+            <marker date="1521592131279" expanded="true" signature="944:970" ph="DELETE FROM " />
+            <marker date="1521592131279" expanded="true" signature="1028:1060" ph="SELECT * FRO... dvd" />
+            <marker date="1521592131279" expanded="true" signature="1123:1191" ph="SELECT * FRO... dvd" />
+            <marker date="1521592131279" expanded="true" signature="1253:1290" ph="SELECT * FRO... dvd" />
+            <marker date="1521592131279" expanded="true" signature="1349:1383" ph="SELECT * FRO... dvd" />
+            <marker date="1521592131279" expanded="true" signature="1440:1472" ph="SELECT * FRO... dvd" />
+            <marker date="1521592131279" expanded="true" signature="1528:1559" ph="SELECT * FRO... dvd" />
+            <marker date="1521592131279" expanded="true" signature="1614:1673" ph="SELECT YEAR(... " />
+            <marker date="1521592131279" expanded="true" signature="1734:1778" ph="SELECT * FRO... dvd" />
+            <marker date="1521592131279" expanded="true" signature="1839:1882" ph="SELECT * FRO... dvd" />
+            <marker date="1521592131279" expanded="true" signature="2403:2426" ph="SELECT LAST_... " />
+            <marker date="1521592131279" expanded="true" signature="3078:3109" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/NoteDaoDbImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding>
+            <marker date="1521592131295" expanded="true" signature="628:677" ph="INSERT INTO note... " />
+            <marker date="1521592131295" expanded="true" signature="732:761" ph="SELECT * FRO... note" />
+            <marker date="1521592131295" expanded="true" signature="816:864" ph="UPDATE note... " />
+            <marker date="1521592131295" expanded="true" signature="919:946" ph="DELETE FROM note... " />
+            <marker date="1521592131295" expanded="true" signature="1003:1036" ph="SELECT * FRO... note" />
+            <marker date="1521592131295" expanded="true" signature="1474:1497" ph="SELECT LAST_... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/NoteDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1500">
+          <caret line="110" column="33" lean-forward="true" selection-start-line="110" selection-start-column="33" selection-end-line="110" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dao/NoteDaoInMemoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="26" column="24" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dto/Note.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dto/AddDvdCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dto/Dvd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="9" column="16" lean-forward="false" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/dto/SearchDvdCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/utility/DateUtility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesoftwareguild/dvdlibraryweb/viewmodel/ShowDvdViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-persistence.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/home.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+          <folding>
+            <element signature="e#12715#14166#0" expanded="false" />
+            <element signature="e#14172#14254#0" expanded="false" />
+            <element signature="e#14333#14690#0" expanded="false" />
+            <element signature="e#14771#14956#0" expanded="false" />
+            <element signature="e#15041#15279#0" expanded="false" />
+            <element signature="e#15365#15467#0" expanded="false" />
+            <element signature="e#15549#15650#0" expanded="false" />
+            <element signature="e#15685#16473#0" expanded="false" />
+            <element signature="e#16511#16652#0" expanded="false" />
+            <element signature="e#16698#17172#0" expanded="false" />
+            <element signature="e#17215#17556#0" expanded="false" />
+            <element signature="e#17598#18290#0" expanded="false" />
+            <element signature="e#18333#18394#0" expanded="false" />
+            <element signature="e#18438#18500#0" expanded="false" />
+            <marker date="1503535399000" expanded="true" signature="15853:16463" ph="..." />
+            <marker date="1503535399000" expanded="true" signature="16570:16642" ph="..." />
+            <marker date="1503535399000" expanded="true" signature="16788:17162" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/dvdSearch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="48" lean-forward="true" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
+          <folding>
+            <marker date="1521592131305" expanded="true" signature="1304:1897" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/npm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/addNote.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="45" column="88" lean-forward="true" selection-start-line="45" selection-start-column="88" selection-end-line="45" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/create.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1485">
+          <caret line="99" column="78" lean-forward="true" selection-start-line="99" selection-start-column="78" selection-end-line="99" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/delete.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-360">
+          <caret line="33" column="67" lean-forward="true" selection-start-line="33" selection-start-column="67" selection-end-line="33" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/deleteNote.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-108">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/edit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-888">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/editNote.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>

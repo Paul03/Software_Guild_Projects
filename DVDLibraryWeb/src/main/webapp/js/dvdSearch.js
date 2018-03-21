@@ -39,7 +39,7 @@ $(document).ready(function() {
         var date = new Date(dvd.releaseDate);
         var releaseYear = date.getFullYear();
 
-        var tableRow = '\
+        return '\
                 <tr class="searchResultsRow" id="dvd-row-' + dvd.dvdId + '"> \n\
                     <td><a data-dvd-id="' + dvd.dvdId + '" data-toggle="modal" data-target="#showDVDModal" data-backdrop="false">' + dvd.title + '</a></td> \n\
                     <td>' + releaseYear + '</td> \n\
@@ -47,8 +47,6 @@ $(document).ready(function() {
                     <td><a data-dvd-id="' + dvd.dvdId + '" data-toggle="modal" data-target="#editDVDModal" data-backdrop="false">Edit</a></td> \n\
                     <td><a data-dvd-id="' + dvd.dvdId + '" data-toggle="modal" data-target="#deleteDVDModal" data-backdrop="false">Delete</a></td> \n\
                 </tr>';
-
-        return tableRow;
 
     };
 

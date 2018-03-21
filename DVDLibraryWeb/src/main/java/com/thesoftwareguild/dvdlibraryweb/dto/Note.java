@@ -9,7 +9,7 @@ public class Note {
     @NotEmpty(message="Note text may not be empty")
     private String noteText;
 
-    private DVD dvd;
+    private Dvd dvd;
 
     public Note() {
         
@@ -37,11 +37,11 @@ public class Note {
         this.noteText = noteText;
     }
 
-    public DVD getDvd() {
+    public Dvd getDvd() {
         return dvd;
     }
 
-    public void setDvd(DVD dvd) {
+    public void setDvd(Dvd dvd) {
         this.dvd = dvd;
     }
 }

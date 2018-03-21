@@ -1,8 +1,8 @@
 package com.thesoftwareguild.dvdlibraryweb.controllers;
 
 import com.thesoftwareguild.dvdlibraryweb.dao.DVDDao;
-import com.thesoftwareguild.dvdlibraryweb.dto.AddDVDCommand;
-import com.thesoftwareguild.dvdlibraryweb.dto.DVD;
+import com.thesoftwareguild.dvdlibraryweb.dto.AddDvdCommand;
+import com.thesoftwareguild.dvdlibraryweb.dto.Dvd;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,9 +24,9 @@ public class HomeController {
     @RequestMapping(value="/", method= RequestMethod.GET)
     public String home(Map model) {
         
-        List<DVD> dvdList = dvdDao.list();
+        List<Dvd> dvdList = dvdDao.list();
         model.put("dvdList", dvdList);
-        model.put("addDVDCommand", new AddDVDCommand());
+        model.put("addDVDCommand", new AddDvdCommand());
         
         return "home";
     }

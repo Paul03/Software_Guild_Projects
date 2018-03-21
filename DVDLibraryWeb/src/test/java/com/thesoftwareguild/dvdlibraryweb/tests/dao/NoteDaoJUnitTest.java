@@ -7,7 +7,7 @@ package com.thesoftwareguild.dvdlibraryweb.tests.dao;
 
 import com.thesoftwareguild.dvdlibraryweb.dao.DVDDao;
 import com.thesoftwareguild.dvdlibraryweb.dao.NoteDao;
-import com.thesoftwareguild.dvdlibraryweb.dto.DVD;
+import com.thesoftwareguild.dvdlibraryweb.dto.Dvd;
 import com.thesoftwareguild.dvdlibraryweb.dto.Note;
 
 import java.util.Date;
@@ -19,7 +19,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 /**
@@ -30,8 +29,8 @@ public class NoteDaoJUnitTest {
     private NoteDao noteDao;
     private DVDDao dvdDao;
 
-    private DVD miracle;
-    private DVD zootopia;
+    private Dvd miracle;
+    private Dvd zootopia;
 
     private Note miracleNote1;
     private Note miracleNote2;
@@ -54,7 +53,7 @@ public class NoteDaoJUnitTest {
         cleaner.execute("DELETE FROM dvd");
         cleaner.execute("DELETE FROM note");
 
-        miracle = new DVD();
+        miracle = new Dvd();
         miracle.setTitle("Miracle");
         miracle.setReleaseDate(new Date((2004 - 1900), (02 - 1), 6));
         miracle.setMpaaRating("PG");
@@ -62,7 +61,7 @@ public class NoteDaoJUnitTest {
         miracle.setStudio("Walt Disney Pictures");
         miracle.setUserRating(8);
 
-        zootopia = new DVD();
+        zootopia = new Dvd();
         zootopia.setTitle("Zootopya"); // spelled wrong on purpose
         zootopia.setReleaseDate(new Date((2016 - 1900), (3 - 1), 4));
         zootopia.setMpaaRating("PG");
@@ -95,7 +94,7 @@ public class NoteDaoJUnitTest {
     @Test
     public void testCreate() {
 
-        DVD addedDVD = dvdDao.create(miracle);
+        Dvd addedDvd = dvdDao.create(miracle);
         Note addedNote = noteDao.create(miracleNote1);
 
         Assert.assertNotNull(addedNote);
@@ -109,7 +108,7 @@ public class NoteDaoJUnitTest {
     @Test
     public void testRead() {
 
-        DVD addedDVD = dvdDao.create(miracle);
+        Dvd addedDvd = dvdDao.create(miracle);
         Note addedNote = noteDao.create(miracleNote2);
 
         Note readNote = noteDao.read(addedNote.getNoteId());
@@ -124,7 +123,7 @@ public class NoteDaoJUnitTest {
     @Test
     public void testUpdate() {
 
-        DVD addedDVD = dvdDao.create(miracle);
+        Dvd addedDvd = dvdDao.create(miracle);
         Note addedNote = noteDao.create(miracleNote2);
 
         Note readNote = noteDao.read(addedNote.getNoteId());
@@ -143,7 +142,7 @@ public class NoteDaoJUnitTest {
     @Test
     public void testDelete() {
 
-        DVD addedDVD = dvdDao.create(miracle);
+        Dvd addedDvd = dvdDao.create(miracle);
         Note addedNote = noteDao.create(miracleNote2);
 
         Note readNote = noteDao.read(addedNote.getNoteId());
@@ -159,7 +158,7 @@ public class NoteDaoJUnitTest {
     @Test
     public void testFindByDVD() {
 
-        DVD addedMiracle = dvdDao.create(miracle);
+        Dvd addedMiracle = dvdDao.create(miracle);
 
         Note addedMiracleNote1 = noteDao.create(miracleNote1);
         Note addedMiracleNote2 = noteDao.create(miracleNote2);
@@ -177,12 +176,12 @@ public class NoteDaoJUnitTest {
     @Test
     public void testGetAverageNumberOfNotes() {
         
-        DVD testDVD1 = new DVD();
-        testDVD1.setTitle("Test DVD 1");
-        DVD testDVD2 = new DVD();
-        testDVD2.setTitle("Test DVD 2");
-        DVD testDVD3 = new DVD();
-        testDVD3.setTitle("Test DVD 3");
+        Dvd testDVD1 = new Dvd();
+        testDVD1.setTitle("Test Dvd 1");
+        Dvd testDVD2 = new Dvd();
+        testDVD2.setTitle("Test Dvd 2");
+        Dvd testDVD3 = new Dvd();
+        testDVD3.setTitle("Test Dvd 3");
         
         dvdDao.create(testDVD1);
         dvdDao.create(testDVD2);

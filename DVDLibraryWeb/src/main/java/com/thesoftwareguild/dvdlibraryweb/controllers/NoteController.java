@@ -2,7 +2,7 @@ package com.thesoftwareguild.dvdlibraryweb.controllers;
 
 import com.thesoftwareguild.dvdlibraryweb.dao.DVDDao;
 import com.thesoftwareguild.dvdlibraryweb.dao.NoteDao;
-import com.thesoftwareguild.dvdlibraryweb.dto.DVD;
+import com.thesoftwareguild.dvdlibraryweb.dto.Dvd;
 import com.thesoftwareguild.dvdlibraryweb.dto.Note;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -27,16 +27,15 @@ public class NoteController {
     @RequestMapping(value="/{id}", method= RequestMethod.GET)
     @ResponseBody
     public Note show(@PathVariable("id") Integer noteId) {
-        
-        Note note = noteDao.read(noteId);
-        return note;
+
+        return noteDao.read(noteId);
         
     }
     
     @RequestMapping(value="add/{dvdId}", method=RequestMethod.GET)
     public String addNote(@PathVariable("dvdId") Integer dvdId, Map model) {
         
-        DVD dvd = dvdDao.read(dvdId);
+        Dvd dvd = dvdDao.read(dvdId);
         model.put("dvd", dvd);
         
         return "addNote";
@@ -46,9 +45,8 @@ public class NoteController {
     @RequestMapping(value="", method=RequestMethod.POST)
     @ResponseBody
     public Note addNote(@Valid @RequestBody Note note) {
-        
-        Note createdNote = noteDao.create(note);
-        return createdNote;
+
+        return noteDao.create(note);
         
     }
     

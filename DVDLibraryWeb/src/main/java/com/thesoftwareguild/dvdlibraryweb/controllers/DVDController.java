@@ -2,16 +2,16 @@ package com.thesoftwareguild.dvdlibraryweb.controllers;
 
 import com.thesoftwareguild.dvdlibraryweb.dao.DVDDao;
 import com.thesoftwareguild.dvdlibraryweb.dao.NoteDao;
-import com.thesoftwareguild.dvdlibraryweb.dto.AddDVDCommand;
-import com.thesoftwareguild.dvdlibraryweb.dto.DVD;
+import com.thesoftwareguild.dvdlibraryweb.dto.AddDvdCommand;
+import com.thesoftwareguild.dvdlibraryweb.dto.Dvd;
 import com.thesoftwareguild.dvdlibraryweb.dto.Note;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
 import javax.validation.Valid;
 
-import com.thesoftwareguild.dvdlibraryweb.dto.SearchDVDCommand;
-import com.thesoftwareguild.dvdlibraryweb.viewmodel.ShowDVDViewModel;
+import com.thesoftwareguild.dvdlibraryweb.dto.SearchDvdCommand;
+import com.thesoftwareguild.dvdlibraryweb.viewmodel.ShowDvdViewModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -36,27 +36,27 @@ public class DVDController {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public ShowDVDViewModel show(@PathVariable("id") Integer dvdId) {
+    public ShowDvdViewModel show(@PathVariable("id") Integer dvdId) {
 
-        DVD d = dvdDao.read(dvdId);
+        Dvd d = dvdDao.read(dvdId);
 
         List<Note> dvdNotes = noteDao.findByDVD(d);
 
-        ShowDVDViewModel showDVDViewModel = new ShowDVDViewModel();
+        ShowDvdViewModel showDvdViewModel = new ShowDvdViewModel();
 
-        showDVDViewModel.setDvd(d);
-        showDVDViewModel.setDvdNoteList(dvdNotes);
+        showDvdViewModel.setDvd(d);
+        showDvdViewModel.setDvdNoteList(dvdNotes);
 
-        return showDVDViewModel;
+        return showDvdViewModel;
 
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
     @ResponseBody
-    public DVD create(@Valid @RequestBody AddDVDCommand commandObject) {
+    public Dvd create(@Valid @RequestBody AddDvdCommand commandObject) {
 
-        DVD dvd = getDVDfromCommandObject(commandObject);
-        DVD d = dvdDao.create(dvd);
+        Dvd dvd = getDVDfromCommandObject(commandObject);
+        Dvd d = dvdDao.create(dvd);
 
         if (!commandObject.getNoteText().trim().equals("")){
 
@@ -71,7 +71,7 @@ public class DVDController {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     @ResponseBody
-    public DVD edit(@Valid @RequestBody DVD dvd) {
+    public Dvd edit(@Valid @RequestBody Dvd dvd) {
 
         dvdDao.update(dvd);
 
@@ -82,9 +82,9 @@ public class DVDController {
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     @Transactional(propagation = Propagation.REQUIRED)
     @ResponseBody
-    public DVD delete(@PathVariable("id") Integer id) {
+    public Dvd delete(@PathVariable("id") Integer id) {
         
-        DVD dvd = dvdDao.read(id);
+        Dvd dvd = dvdDao.read(id);
 
         List<Note> dvdNoteList = noteDao.findByDVD(dvd);
 
@@ -105,37 +105,37 @@ public class DVDController {
 
     @RequestMapping(value="/Search", method=RequestMethod.POST)
     @ResponseBody
-    public List<DVD> search(@RequestBody SearchDVDCommand searchDVDCommand) {
+    public List<Dvd> search(@RequestBody SearchDvdCommand searchDvdCommand) {
 
-        List<DVD> searchResultList = new ArrayList<>();
+        List<Dvd> searchResultList = new ArrayList<>();
 
-        if (searchDVDCommand.getFieldToSearch().equals("title")) {
+        if (searchDvdCommand.getFieldToSearch().equals("title")) {
 
-            String titleToSearchFor = searchDVDCommand.getValueToSearchFor();
+            String titleToSearchFor = searchDvdCommand.getValueToSearchFor();
 
             searchResultList = dvdDao.searchByTitle( titleToSearchFor );
 
         }
 
-        if (searchDVDCommand.getFieldToSearch().equals("studio")) {
+        if (searchDvdCommand.getFieldToSearch().equals("studio")) {
 
-            String studioToSearchFor = searchDVDCommand.getValueToSearchFor();
+            String studioToSearchFor = searchDvdCommand.getValueToSearchFor();
 
             searchResultList = dvdDao.searchByStudio( studioToSearchFor );
 
         }
 
-        if (searchDVDCommand.getFieldToSearch().equals("director")) {
+        if (searchDvdCommand.getFieldToSearch().equals("director")) {
 
-            String directorToSearchFor = searchDVDCommand.getValueToSearchFor();
+            String directorToSearchFor = searchDvdCommand.getValueToSearchFor();
 
             searchResultList = dvdDao.searchByDirector( directorToSearchFor );
 
         }
 
-        if (searchDVDCommand.getFieldToSearch().equals("mpaaRating")) {
+        if (searchDvdCommand.getFieldToSearch().equals("mpaaRating")) {
 
-            String mpaaRatingToSearch = searchDVDCommand.getValueToSearchFor();
+            String mpaaRatingToSearch = searchDvdCommand.getValueToSearchFor();
 
             searchResultList = dvdDao.searchByMPAARating( mpaaRatingToSearch );
 
@@ -144,9 +144,9 @@ public class DVDController {
         return searchResultList;
     }
     
-    private DVD getDVDfromCommandObject(AddDVDCommand commandObject) {
+    private Dvd getDVDfromCommandObject(AddDvdCommand commandObject) {
 
-        DVD dvd = new DVD();
+        Dvd dvd = new Dvd();
 
         dvd.setTitle(commandObject.getTitle());
         dvd.setReleaseDate(commandObject.getReleaseDate());
@@ -159,7 +159,7 @@ public class DVDController {
 
     }
 
-    private Note getNoteFromCommandObject(AddDVDCommand commandObject) {
+    private Note getNoteFromCommandObject(AddDvdCommand commandObject) {
 
         Note note = new Note();
         note.setNoteText(commandObject.getNoteText());

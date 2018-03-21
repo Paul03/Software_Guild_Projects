@@ -1,6 +1,6 @@
 package com.thesoftwareguild.dvdlibraryweb.dao;
 
-import com.thesoftwareguild.dvdlibraryweb.dto.DVD;
+import com.thesoftwareguild.dvdlibraryweb.dto.Dvd;
 import com.thesoftwareguild.dvdlibraryweb.dto.Note;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -17,7 +17,7 @@ public class NoteDaoImpl implements NoteDao {
     private final String FILENAME = "notes.txt";
     private final String TOKEN = "::";
 
-    private List<Note> noteLibrary = null;
+    private List<Note> noteLibrary;
     private long nextId = 1;
 
     private DVDDao dvdDao;
@@ -93,11 +93,7 @@ public class NoteDaoImpl implements NoteDao {
 
     private void encode() {
 
-        PrintWriter out = null;
-
-        try {
-
-            out = new PrintWriter(new FileWriter(FILENAME));
+        try (PrintWriter out = new PrintWriter(new FileWriter(FILENAME))) {
 
             for (Note n : noteLibrary) {
 
@@ -114,17 +110,13 @@ public class NoteDaoImpl implements NoteDao {
 
         } catch (IOException ex) {
 
-        } finally {
-
-            out.close();
-
         }
 
     }
 
     private List<Note> decode() {
 
-        List<Note> tempNoteList = new ArrayList();
+        List<Note> tempNoteList = new ArrayList<>();
 
         try {
 
@@ -158,9 +150,9 @@ public class NoteDaoImpl implements NoteDao {
     }
 
     @Override
-    public List<Note> findByDVD(DVD dvd) {
+    public List<Note> findByDVD(Dvd dvd) {
 
-        List<Note> dvdNotes = new ArrayList();
+        List<Note> dvdNotes = new ArrayList<>();
 
         for (Note n : noteLibrary) {
             if (n.getDvd().getDvdId() == dvd.getDvdId()) {
@@ -175,11 +167,9 @@ public class NoteDaoImpl implements NoteDao {
     @Override
     public double getAverageNumberOfNotes() {
 
-        List<DVD> tempDVDList = dvdDao.list();
+        List<Dvd> tempDvdList = dvdDao.list();
 
-        double average = ((double) noteLibrary.size()) / ((double) tempDVDList.size());
-
-        return average;
+        return ((double) noteLibrary.size()) / ((double) tempDvdList.size());
 
     }
 

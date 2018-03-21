@@ -1,20 +1,20 @@
 package com.thesoftwareguild.dvdlibraryweb.viewmodel;
 
-import com.thesoftwareguild.dvdlibraryweb.dto.DVD;
+import com.thesoftwareguild.dvdlibraryweb.dto.Dvd;
 import com.thesoftwareguild.dvdlibraryweb.dto.Note;
 
 import java.util.List;
 
-public class ShowDVDViewModel {
+public class ShowDvdViewModel {
 
-    private DVD dvd;
+    private Dvd dvd;
     private List<Note> dvdNoteList;
 
-    public DVD getDvd() {
+    public Dvd getDvd() {
         return dvd;
     }
 
-    public void setDvd(DVD dvd) {
+    public void setDvd(Dvd dvd) {
         this.dvd = dvd;
     }
 

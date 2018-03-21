@@ -1,34 +1,35 @@
 package com.thesoftwareguild.dvdlibraryweb.dao;
 
-import com.thesoftwareguild.dvdlibraryweb.dto.DVD;
+import com.thesoftwareguild.dvdlibraryweb.dto.Dvd;
+
 import java.util.List;
 
 public interface DVDDao {
     
-    DVD create(DVD dvd);
+    Dvd create(Dvd dvd);
     
-    DVD read(long id);
+    Dvd read(long id);
     
-    void update(DVD dvd);
+    void update(Dvd dvd);
     
-    void delete(DVD dvd);
+    void delete(Dvd dvd);
     
-    List<DVD> list();
+    List<Dvd> list();
     
-    List<DVD> searchLastNYears(int years);
+    List<Dvd> searchLastNYears(int years);
     
-    List<DVD> searchByMPAARating(String rating);
+    List<Dvd> searchByMPAARating(String rating);
     
-    List<DVD> searchByDirector(String directorName);
+    List<Dvd> searchByDirector(String directorName);
     
-    List<DVD> searchByStudio(String studioName);
+    List<Dvd> searchByStudio(String studioName);
     
     Double averageAge();
     
-    List<DVD> findNewestDVD();
+    List<Dvd> findNewestDVD();
     
-    List<DVD> findOldestDVD();
+    List<Dvd> findOldestDVD();
     
-    List<DVD> searchByTitle(String title);
+    List<Dvd> searchByTitle(String title);
     
 }

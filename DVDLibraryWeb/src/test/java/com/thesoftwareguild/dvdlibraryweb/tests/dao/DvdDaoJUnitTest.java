@@ -6,10 +6,11 @@
 package com.thesoftwareguild.dvdlibraryweb.tests.dao;
 
 import com.thesoftwareguild.dvdlibraryweb.dao.DVDDao;
-import com.thesoftwareguild.dvdlibraryweb.dto.DVD;
+import com.thesoftwareguild.dvdlibraryweb.dto.Dvd;
 
 import java.util.Date;
 import java.util.List;
+
 import junit.framework.Assert;
 import org.junit.After;
 import org.junit.Before;
@@ -23,16 +24,16 @@ import org.springframework.jdbc.core.JdbcTemplate;
  *
  * @author paulharding
  */
-public class DVDDaoJUnitTest {
+public class DvdDaoJUnitTest {
 
     private DVDDao dvdDao;
 
-    private DVD miracle;
-    private DVD moreThanAGame;
-    private DVD zootopya;
-    private DVD GodsNotDead;
+    private Dvd miracle;
+    private Dvd moreThanAGame;
+    private Dvd zootopya;
+    private Dvd GodsNotDead;
 
-    public DVDDaoJUnitTest() {
+    public DvdDaoJUnitTest() {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-persistence.xml");
         dvdDao = ctx.getBean("dvdDao", DVDDao.class);
     }
@@ -45,7 +46,7 @@ public class DVDDaoJUnitTest {
         JdbcTemplate cleaner = (JdbcTemplate) ctx.getBean("jdbcTemplate");
         cleaner.execute("DELETE FROM dvd");
 
-        miracle = new DVD();
+        miracle = new Dvd();
         miracle.setTitle("Miracle");
         miracle.setReleaseDate( new Date( (2004 - 1900) , (02 - 1) , 6) );
         miracle.setMpaaRating("PG");
@@ -53,7 +54,7 @@ public class DVDDaoJUnitTest {
         miracle.setStudio("Walt Disney Pictures");
         miracle.setUserRating(8);
 
-        moreThanAGame = new DVD();
+        moreThanAGame = new Dvd();
         moreThanAGame.setTitle("More Than A Game");
         moreThanAGame.setReleaseDate( new Date( (2008 - 1900), (10 - 1) , 2 ) );
         moreThanAGame.setMpaaRating("PG");
@@ -61,7 +62,7 @@ public class DVDDaoJUnitTest {
         moreThanAGame.setStudio("Harvey Mason Jr");
         moreThanAGame.setUserRating(7);
 
-        zootopya = new DVD();
+        zootopya = new Dvd();
         zootopya.setTitle("Zootopya"); // spelled wrong on purpose
         zootopya.setReleaseDate( new Date( (2016 - 1900), (3 - 1) , 4 ) );
         zootopya.setMpaaRating("PG");
@@ -69,7 +70,7 @@ public class DVDDaoJUnitTest {
         zootopya.setStudio("Walt Disney Pictures");
         zootopya.setUserRating(8);
 
-        GodsNotDead = new DVD();
+        GodsNotDead = new Dvd();
         GodsNotDead.setTitle("God's Not Dead");
         GodsNotDead.setReleaseDate( new Date( (2014 - 1900), (3 - 1) , 21 ) );
         GodsNotDead.setMpaaRating("PG");
@@ -86,15 +87,15 @@ public class DVDDaoJUnitTest {
     @Test
     public void testAddDvd() {
 
-        DVD addedDVD = dvdDao.create(miracle);
+        Dvd addedDvd = dvdDao.create(miracle);
 
-        Assert.assertNotNull(addedDVD);
-        Assert.assertNotNull(addedDVD.getDvdId());
+        Assert.assertNotNull(addedDvd);
+        Assert.assertNotNull(addedDvd.getDvdId());
 
         Integer expectedYear = 2004;
-        Integer actualYear = addedDVD.getReleaseDate().getYear() + 1900;
+        Integer actualYear = addedDvd.getReleaseDate().getYear() + 1900;
 
-        Assert.assertEquals("Miracle", addedDVD.getTitle());
+        Assert.assertEquals("Miracle", addedDvd.getTitle());
         Assert.assertEquals(expectedYear, actualYear);
 
     }
@@ -102,17 +103,17 @@ public class DVDDaoJUnitTest {
     @Test
     public void testReadDvd() {
 
-        DVD addedDVD = dvdDao.create(moreThanAGame);
+        Dvd addedDvd = dvdDao.create(moreThanAGame);
 
-        DVD readDVD = dvdDao.read(addedDVD.getDvdId());
+        Dvd readDvd = dvdDao.read(addedDvd.getDvdId());
 
-        Assert.assertNotNull(readDVD);
-        Assert.assertNotNull(readDVD.getDvdId());
+        Assert.assertNotNull(readDvd);
+        Assert.assertNotNull(readDvd.getDvdId());
 
         Integer expectedYear = 2008;
-        Integer actualYear = readDVD.getReleaseDate().getYear() + 1900;
+        Integer actualYear = readDvd.getReleaseDate().getYear() + 1900;
 
-        Assert.assertEquals("More Than A Game", readDVD.getTitle());
+        Assert.assertEquals("More Than A Game", readDvd.getTitle());
         Assert.assertEquals(expectedYear, actualYear);
 
 
@@ -121,35 +122,35 @@ public class DVDDaoJUnitTest {
     @Test
     public void testUpdateDvd() {
 
-        DVD addedDVD = dvdDao.create(zootopya);
+        Dvd addedDvd = dvdDao.create(zootopya);
 
-        DVD readDVD = dvdDao.read(addedDVD.getDvdId());
-        readDVD.setTitle("Zootopia");
+        Dvd readDvd = dvdDao.read(addedDvd.getDvdId());
+        readDvd.setTitle("Zootopia");
 
-        dvdDao.update(readDVD);
+        dvdDao.update(readDvd);
 
-        DVD updatedDVD = dvdDao.read(readDVD.getDvdId());
+        Dvd updatedDvd = dvdDao.read(readDvd.getDvdId());
 
-        Assert.assertNotNull(updatedDVD);
-        Assert.assertEquals(readDVD.getDvdId(), updatedDVD.getDvdId());
-        Assert.assertNotSame(addedDVD, updatedDVD);
+        Assert.assertNotNull(updatedDvd);
+        Assert.assertEquals(readDvd.getDvdId(), updatedDvd.getDvdId());
+        Assert.assertNotSame(addedDvd, updatedDvd);
 
-        Assert.assertEquals("Zootopia", updatedDVD.getTitle());
+        Assert.assertEquals("Zootopia", updatedDvd.getTitle());
 
     }
 
     @Test
     public void testDeleteDvd() {
 
-        DVD addedDVD = dvdDao.create(GodsNotDead);
+        Dvd addedDvd = dvdDao.create(GodsNotDead);
 
-        DVD readDVD = dvdDao.read(addedDVD.getDvdId());
+        Dvd readDvd = dvdDao.read(addedDvd.getDvdId());
 
-        dvdDao.delete(readDVD);
+        dvdDao.delete(readDvd);
 
         try {
-        DVD deletedDVD = dvdDao.read(addedDVD.getDvdId());
-        Assert.assertNull(readDVD); // I want to put something here that is NOT Null
+        Dvd deletedDvd = dvdDao.read(addedDvd.getDvdId());
+        Assert.assertNull(readDvd); // I want to put something here that is NOT Null
                                     // (if it reaches this point, then the test should fail)
         
         } catch(EmptyResultDataAccessException ex) {
@@ -161,16 +162,16 @@ public class DVDDaoJUnitTest {
     @Test
     public void testList() {
 
-        DVD addedDVD1 = dvdDao.create(GodsNotDead);
-        DVD addedDVD2 = dvdDao.create(zootopya);
+        Dvd addedDvd1 = dvdDao.create(GodsNotDead);
+        Dvd addedDvd2 = dvdDao.create(zootopya);
 
-        List<DVD> dvdList = dvdDao.list();
+        List<Dvd> dvdList = dvdDao.list();
 
         Assert.assertEquals(2, dvdList.size());
 
         dvdList.add(miracle);
 
-        List<DVD> dvdList2 = dvdDao.list();
+        List<Dvd> dvdList2 = dvdDao.list();
 
         Assert.assertNotSame(dvdList.size(), dvdList2.size());
 
@@ -184,7 +185,7 @@ public class DVDDaoJUnitTest {
         dvdDao.create(zootopya);
         dvdDao.create(GodsNotDead);
 
-        List<DVD> last5Yrs = dvdDao.searchLastNYears(5);
+        List<Dvd> last5Yrs = dvdDao.searchLastNYears(5);
         Assert.assertEquals(2, last5Yrs.size());
 
     }
@@ -197,7 +198,7 @@ public class DVDDaoJUnitTest {
         dvdDao.create(zootopya);
         dvdDao.create(GodsNotDead);
 
-        List<DVD> last10Yrs = dvdDao.searchLastNYears(10);
+        List<Dvd> last10Yrs = dvdDao.searchLastNYears(10);
         Assert.assertEquals(3, last10Yrs.size());
 
     }
@@ -210,7 +211,7 @@ public class DVDDaoJUnitTest {
         dvdDao.create(zootopya);
         dvdDao.create(GodsNotDead);
 
-        List<DVD> last20Yrs = dvdDao.searchLastNYears(20);
+        List<Dvd> last20Yrs = dvdDao.searchLastNYears(20);
         Assert.assertEquals(4, last20Yrs.size());
 
     }
@@ -223,8 +224,8 @@ public class DVDDaoJUnitTest {
         dvdDao.create(zootopya);
         dvdDao.create(GodsNotDead);
 
-        List<DVD> gRatedDVDs = dvdDao.searchByMPAARating("G");
-        Assert.assertEquals(0, gRatedDVDs.size());
+        List<Dvd> gRatedDvds = dvdDao.searchByMPAARating("G");
+        Assert.assertEquals(0, gRatedDvds.size());
 
     }
 
@@ -236,8 +237,8 @@ public class DVDDaoJUnitTest {
         dvdDao.create(zootopya);
         dvdDao.create(GodsNotDead);
 
-        List<DVD> pgRatedDVDs = dvdDao.searchByMPAARating("PG");
-        Assert.assertEquals(4, pgRatedDVDs.size());
+        List<Dvd> pgRatedDvds = dvdDao.searchByMPAARating("PG");
+        Assert.assertEquals(4, pgRatedDvds.size());
 
     }
 
@@ -249,42 +250,42 @@ public class DVDDaoJUnitTest {
         dvdDao.create(zootopya);
         dvdDao.create(GodsNotDead);
 
-        List<DVD> johnLasseterDVDs = dvdDao.searchByDirector("Harold Cronk");
-        Assert.assertEquals(1, johnLasseterDVDs.size());
+        List<Dvd> johnLasseterDvds = dvdDao.searchByDirector("Harold Cronk");
+        Assert.assertEquals(1, johnLasseterDvds.size());
 
-        List<DVD> byronHowardDVDs = dvdDao.searchByDirector("Byron Howard");
-        Assert.assertEquals(1, byronHowardDVDs.size());
+        List<Dvd> byronHowardDvds = dvdDao.searchByDirector("Byron Howard");
+        Assert.assertEquals(1, byronHowardDvds.size());
 
     }
 /*
     @Test
     public void testSearchByDirectorSort() {
 
-        // Create some DVD objects
-        DVD lasseterTest = new DVD();
+        // Create some Dvd objects
+        Dvd lasseterTest = new Dvd();
         lasseterTest.setDirector("John Lasseter");
         lasseterTest.setMpaaRating("PG");
 
-        DVD toyStory = new DVD();
+        Dvd toyStory = new Dvd();
         toyStory.setTitle("Toy Story");
         toyStory.setDirector("John Lasseter");
         toyStory.setMpaaRating("G");
 
-        DVD toyStory2 = new DVD();
+        Dvd toyStory2 = new Dvd();
         toyStory2.setTitle("Toy Story 2");
         toyStory2.setDirector("John Lasseter");
         toyStory2.setMpaaRating("G");
 
-        DVD verbinskiTest = new DVD();
+        Dvd verbinskiTest = new Dvd();
         verbinskiTest.setDirector("Gore Verbinski");
         verbinskiTest.setMpaaRating("G");
 
-        DVD pirates = new DVD();
+        Dvd pirates = new Dvd();
         pirates.setTitle("Pirates 1");
         pirates.setDirector("Gore Verbinski");
         pirates.setMpaaRating("PG-13");
 
-        DVD pirates2 = new DVD();
+        Dvd pirates2 = new Dvd();
         pirates2.setTitle("Pirates 2");
         pirates2.setDirector("Gore Verbinski");
         pirates2.setMpaaRating("PG-13");
@@ -297,8 +298,8 @@ public class DVDDaoJUnitTest {
         dvdDao.create(pirates);
         dvdDao.create(pirates2);
 
-        List<DVD> johnLasseterDVDs = dvdDao.searchByDirector("John Lasseter");
-        List<DVD> goreVerbinskiDVDs = dvdDao.searchByDirector("Gore Verbinski");
+        List<Dvd> johnLasseterDVDs = dvdDao.searchByDirector("John Lasseter");
+        List<Dvd> goreVerbinskiDVDs = dvdDao.searchByDirector("Gore Verbinski");
 
         Assert.assertEquals(3, johnLasseterDVDs.size());
         Assert.assertEquals(3, goreVerbinskiDVDs.size());
@@ -323,10 +324,10 @@ public class DVDDaoJUnitTest {
         dvdDao.create(zootopya);
         dvdDao.create(GodsNotDead);
 
-        List<DVD> disneyPixar = dvdDao.searchByStudio("Walt Disney Pictures");
+        List<Dvd> disneyPixar = dvdDao.searchByStudio("Walt Disney Pictures");
         Assert.assertEquals(2, disneyPixar.size());
 
-        List<DVD> disney = dvdDao.searchByStudio("Michael Scott");
+        List<Dvd> disney = dvdDao.searchByStudio("Michael Scott");
         Assert.assertEquals(1, disney.size());
 
     }
@@ -354,9 +355,9 @@ public class DVDDaoJUnitTest {
         dvdDao.create(zootopya);
         dvdDao.create(GodsNotDead);
 
-        List<DVD> newestDVD = dvdDao.findNewestDVD();
+        List<Dvd> newestDvd = dvdDao.findNewestDVD();
 
-        Assert.assertEquals(newestDVD.get(0).getTitle(), zootopya.getTitle());
+        Assert.assertEquals(newestDvd.get(0).getTitle(), zootopya.getTitle());
 
     }
 
@@ -368,9 +369,9 @@ public class DVDDaoJUnitTest {
         dvdDao.create(zootopya);
         dvdDao.create(GodsNotDead);
 
-        List<DVD> oldestDVD = dvdDao.findOldestDVD();
+        List<Dvd> oldestDvd = dvdDao.findOldestDVD();
 
-        Assert.assertEquals(oldestDVD.get(0).getTitle(), miracle.getTitle());
+        Assert.assertEquals(oldestDvd.get(0).getTitle(), miracle.getTitle());
 
     }
 

@@ -1,6 +1,6 @@
 package com.thesoftwareguild.dvdlibraryweb.dto;
 
-public class SearchDVDCommand {
+public class SearchDvdCommand {
 
     private String fieldToSearch;
     private String valueToSearchFor;
