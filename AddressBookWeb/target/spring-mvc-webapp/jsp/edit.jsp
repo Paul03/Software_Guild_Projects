@@ -1,11 +1,6 @@
-<%-- 
-    Document   : edit
-    Created on : Sep 15, 2016, 11:42:48 AM
-    Author     : paulharding
---%>
-
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 

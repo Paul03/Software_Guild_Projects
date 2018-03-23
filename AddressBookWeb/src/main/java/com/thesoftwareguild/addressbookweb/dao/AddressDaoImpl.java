@@ -15,7 +15,7 @@ import java.util.Scanner;
 
 public class AddressDaoImpl implements AddressDao {
 
-    private List<Address> addressBook = null;
+    private List<Address> addressBook;
     private static String FILENAME = "addresses.txt";
     private static String TOKEN = "::";
     private Integer nextId = 1;
@@ -40,7 +40,7 @@ public class AddressDaoImpl implements AddressDao {
         addressBook.add(address);
 
         nextId++;
-        
+
         encode();
 
         return new Address(address);
@@ -70,7 +70,7 @@ public class AddressDaoImpl implements AddressDao {
                 addressBook.set(i, address);
             }
         }
-        
+
         encode();
 
     }
@@ -88,7 +88,7 @@ public class AddressDaoImpl implements AddressDao {
             }
 
         }
-        
+
         encode();
 
     }
@@ -96,7 +96,7 @@ public class AddressDaoImpl implements AddressDao {
     @Override
     public List<Address> listAll() {
 
-        ArrayList result = new ArrayList(addressBook);
+        ArrayList result = new ArrayList<>(addressBook);
 
         Collections.sort(result);
 
@@ -105,12 +105,7 @@ public class AddressDaoImpl implements AddressDao {
 
     private void encode() {
 
-        PrintWriter out = null;
-
-        try {
-
-            out = new PrintWriter(new FileWriter(FILENAME));
-
+        try (PrintWriter out = new PrintWriter(new FileWriter(FILENAME))) {
             for (Address a : addressBook) {
 
                 out.print(a.getId());
@@ -140,8 +135,6 @@ public class AddressDaoImpl implements AddressDao {
 
         } catch (IOException ex) {
 
-        } finally {
-            out.close();
         }
 
     }

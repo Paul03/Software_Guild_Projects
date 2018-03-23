@@ -1,10 +1,5 @@
-<%-- 
-    Document   : show
-    Created on : Sep 15, 2016, 11:44:08 AM
-    Author     : paulharding
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 

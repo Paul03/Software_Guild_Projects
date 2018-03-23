@@ -4,23 +4,23 @@ import com.thesoftwareguild.addressbookweb.dto.Address;
 import java.util.List;
 
 public interface AddressDao {
-    
-    public Address create(Address address);
-    
-    public Address read(Integer id);
-    
-    public void update(Address address);
-    
-    public void delete(Address address);
-    
-    public List<Address> listAll();
-    
-    public List<Address> findByLastName(String lastName);
-    
-    public List<Address> findByCity(String cityName);
-    
-    public List<Address> findByState(String stateName);
-    
-    public List<Address> findByZip(String zipCode);
-    
+
+    Address create(Address address);
+
+    Address read(Integer id);
+
+    void update(Address address);
+
+    void delete(Address address);
+
+    List<Address> listAll();
+
+    List<Address> findByLastName(String lastName);
+
+    List<Address> findByCity(String cityName);
+
+    List<Address> findByState(String stateName);
+
+    List<Address> findByZip(String zipCode);
+
 }

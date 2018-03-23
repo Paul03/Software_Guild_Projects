@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.thesoftwareguild.addressbookweb.dao;
 
 import com.thesoftwareguild.addressbookweb.dto.Address;
@@ -11,13 +6,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
-/**
- *
- * @author apprentice
- */
 public class AddressDaoInMemoryImpl implements AddressDao {
 
-    private List<Address> addressBook = new ArrayList();
+    private List<Address> addressBook = new ArrayList<>();
     private Integer nextId = 1;
 
     public AddressDaoInMemoryImpl() {
@@ -82,7 +73,7 @@ public class AddressDaoInMemoryImpl implements AddressDao {
     @Override
     public List<Address> listAll() {
 
-        List<Address> result = new ArrayList(addressBook);
+        List<Address> result = new ArrayList<>(addressBook);
 
         Collections.sort(result);
 
@@ -92,7 +83,7 @@ public class AddressDaoInMemoryImpl implements AddressDao {
     @Override
     public List<Address> findByLastName(String lastName) {
 
-        List<Address> result = new ArrayList();
+        List<Address> result = new ArrayList<>();
 
         for (Address a : addressBook) {
             if (a.getLastName().equals(lastName)) {
@@ -107,7 +98,7 @@ public class AddressDaoInMemoryImpl implements AddressDao {
     @Override
     public List<Address> findByCity(String cityName) {
 
-        List<Address> result = new ArrayList();
+        List<Address> result = new ArrayList<>();
 
         for (Address a : addressBook) {
             if (a.getCity().equals(cityName)) {
@@ -121,7 +112,7 @@ public class AddressDaoInMemoryImpl implements AddressDao {
     @Override
     public List<Address> findByState(String stateName) {
 
-        List<Address> result = new ArrayList();
+        List<Address> result = new ArrayList<>();
 
         for (Address a : addressBook) {
             if (a.getState().toLowerCase().contains(stateName.toLowerCase()) || stateName.toLowerCase().contains(a.getState().toLowerCase())) {
@@ -137,7 +128,7 @@ public class AddressDaoInMemoryImpl implements AddressDao {
     @Override
     public List<Address> findByZip(String zipCode) {
 
-        List<Address> result = new ArrayList();
+        List<Address> result = new ArrayList<>();
 
         for (Address a : addressBook) {
             if (a.getZipCode().equals(zipCode)) {

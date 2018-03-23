@@ -1,10 +1,5 @@
-<%-- 
-    Document   : delete
-    Created on : Sep 15, 2016, 12:53:59 PM
-    Author     : paulharding
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 

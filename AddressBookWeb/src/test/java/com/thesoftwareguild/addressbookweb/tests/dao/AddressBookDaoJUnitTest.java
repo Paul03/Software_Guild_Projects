@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.thesoftwareguild.addressbookweb.tests.dao;
 
 import com.thesoftwareguild.addressbookweb.dao.AddressDao;
@@ -19,9 +14,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-/**
- * @author paulharding
- */
 public class AddressBookDaoJUnitTest {
 
     private AddressDao dao;
@@ -145,11 +137,11 @@ public class AddressBookDaoJUnitTest {
 
         try {
             Address deletedAddress = dao.read(readAddress.getId());
-            
+
             Assert.assertNull(readAddress);
-            
+
         } catch (EmptyResultDataAccessException ex) {
-            
+
         }
 
     }

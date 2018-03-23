@@ -1,10 +1,5 @@
-<%-- 
-    Document   : header
-    Created on : Sep 15, 2016, 11:07:57 AM
-    Author     : paulharding
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 
@@ -17,11 +12,11 @@
         <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet"/>
 
         <title>Address Book Header</title>
-        
+
         <style>
-            
-            
-            
+
+
+
         </style>
 
     </head>

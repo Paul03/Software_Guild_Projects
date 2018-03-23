@@ -1,11 +1,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%--
-    Document   : navbar
-    Created on : Sep 15, 2016, 11:09:46 AM
-    Author     : paulharding
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 

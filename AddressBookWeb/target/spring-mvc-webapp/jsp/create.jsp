@@ -1,11 +1,6 @@
-<%-- 
-    Document   : create
-    Created on : Sep 15, 2016, 11:26:12 AM
-    Author     : paulharding
---%>
-
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 
@@ -17,7 +12,7 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-        
+
         <title>New Contact</title>
 
     </head>
