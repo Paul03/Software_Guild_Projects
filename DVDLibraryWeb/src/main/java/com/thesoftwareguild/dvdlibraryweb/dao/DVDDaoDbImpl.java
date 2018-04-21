@@ -55,12 +55,12 @@ public class DVDDaoDbImpl implements DVDDao {
     public Dvd read(long id) {
 
         return jdbcTemplate.queryForObject(SQL_SELECT_DVD, new DVDMapper(), id);
-        
+
     }
 
     @Override
     public void update(Dvd dvd) {
-        
+
         jdbcTemplate.update(SQL_UPDATE_DVD,
                 dvd.getTitle(),
                 dvd.getReleaseDate(),
@@ -139,7 +139,7 @@ public class DVDDaoDbImpl implements DVDDao {
 
         return jdbcTemplate.query(SQL_SELECT_TITLE, new DVDMapper(), title);
     }
-    
+
     private static final class DVDMapper implements RowMapper<Dvd> {
 
         @Override
@@ -154,11 +154,10 @@ public class DVDDaoDbImpl implements DVDDao {
             dvd.setDirector(resultSet.getString("director"));
             dvd.setStudio(resultSet.getString("studio"));
             dvd.setUserRating(resultSet.getInt("user_rating"));
-            
 
             return dvd;
 
         }
     }
-    
+
 }

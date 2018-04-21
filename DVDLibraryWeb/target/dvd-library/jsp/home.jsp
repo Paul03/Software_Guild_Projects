@@ -601,6 +601,7 @@
         <script src="${pageContext.request.contextPath}/js/jquery-3.1.0.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/app.js"></script>
+        <script src="${pageContext.request.contextPath}/js/dvd.js"></script>
 
     </body>
 

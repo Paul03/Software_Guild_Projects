@@ -4,21 +4,21 @@ $(document).ready(function () {
     $("#addDVDButton").on("click", function (e) {
 
         e.preventDefault();
-        
+
         clearAddDVDErrorMessages();
         var addDVDFormIsValid = checkRequiredFieldValidation("addDVDForm");
-        
+
         if (addDVDFormIsValid) {
             makeAjaxCallToCreateDvd();
         }
     });
-    
+
     /* Read a DVD */
     $("#showDVDModal").on("shown.bs.modal", function (e) {
-        
+
         var link = $(e.relatedTarget);
         var dvdId = link.data("dvd-id");
-        
+
         $.ajax({
            url: contextRoot + "/DVD/" + dvdId ,
            type: "GET" ,
@@ -27,34 +27,34 @@ $(document).ready(function () {
                xhr.setRequestHeader("Content-Type", "application/json");
            },
            success: function(dvd) {
-               
+
                $("#showDVDModalHeader").text(dvd.dvd.title);
-               
+
                $("#showTitle").text(dvd.dvd.title);
                $("#showReleaseDate").text(dvd.dvd.releaseDate);
                $("#showMpaaRating").text(dvd.dvd.mpaaRating);
                $("#showDirector").text(dvd.dvd.director);
                $("#showStudio").text(dvd.dvd.studio);
                $("#showUserRating").text(dvd.dvd.userRating);
-               
+
                for (var i = 0; i < dvd.dvdNoteList.length; i++) {
                    var tableRow = buildShowNoteRow(dvd.dvdNoteList[i].noteText);
                    $("#showNoteTable").append( $(tableRow) );
                }
-               
+
            },
            error: function() {
                console.log("DVD not found");
            }
         });
     });
-    
+
     // Edit a DVD
     $("#editDVDModal").on("shown.bs.modal", function (e) {
 
         var link = $(e.relatedTarget);
         var dvdId = link.data("dvd-id");
-        
+
         $.ajax({
            url: contextRoot +  "/DVD/" + dvdId,
            type: "GET",
@@ -73,24 +73,24 @@ $(document).ready(function () {
                $("#editDirector").val(dvd.dvd.director);
                $("#editStudio").val(dvd.dvd.studio);
                $("#editUserRating").val(dvd.dvd.userRating);
-               
+
                for (var i = 0; i < dvd.dvdNoteList.length; i++) {
                    var tableRow = buildEditNoteRow(dvd.dvdNoteList[i].noteText, dvd.dvdNoteList[i].noteId);
                    $("#editNoteTable").append( $(tableRow) );
                }
-               
+
            },
            error: function() {
                console.log("Error reading DVD");
            }
         });
     });
-    
+
     // Functionality - Edit Submit Button
     $("#editDVDButton").on("click", function(e) {
-        
+
         e.preventDefault();
-        
+
         var dvd = {
             dvdId: $("#editId").val() ,
             title: $("#editTitle").val() ,
@@ -100,9 +100,9 @@ $(document).ready(function () {
             studio: $("#editStudio").val() ,
             userRating: $("#editUserRating").val()
         };
-        
+
         var dvdData = JSON.stringify(dvd);
-        
+
         $.ajax({
            url: contextRoot + "/DVD/" + dvd.dvdId ,
            type: "PUT" ,
@@ -115,7 +115,7 @@ $(document).ready(function () {
            success: function(dvd) {
 
                clearEditDVDErrorMessages();
-               
+
                var tableRow = buildDVDRow(dvd);
                $("#dvd-row-" + dvd.dvdId).replaceWith( $(tableRow) );
 
@@ -133,15 +133,15 @@ $(document).ready(function () {
                });
            }
         });
-        
+
     });
-    
+
     // Delete DVD
     $("#deleteDVDModal").on("shown.bs.modal", function(e) {
-        
+
         var link = $(e.relatedTarget);
         var dvdId = link.data("dvd-id");
-        
+
         $.ajax({
             url: contextRoot + "/DVD/" + dvdId,
             type: "GET",
@@ -160,9 +160,9 @@ $(document).ready(function () {
                 $("#deleteDirector").text(data.dvd.director);
                 $("#deleteStudio").text(data.dvd.studio);
                 $("#deleteUserRating").text(data.dvd.userRating);
-                
+
                 $("#deleteUserNotes").val(data.userNotes);
-                
+
                 for (var i = 0; i < data.dvdNoteList.length; i++) {
                    var tableRow = buildShowNoteRow(data.dvdNoteList[i].noteText);
                    $("#deleteNoteTable").append( $(tableRow) );
@@ -173,12 +173,12 @@ $(document).ready(function () {
             }
         });
     });
-    
+
     // Functionality - Delete DVD Button
     $("#deleteDVDButton").on("click", function(e) {
-        
+
         e.preventDefault();
-        
+
         var dvd = {
             dvdId: $("#deleteId").val() ,
             title: $("#deleteTitle").val() ,
@@ -187,12 +187,12 @@ $(document).ready(function () {
             director: $("#deleteDirector").val() ,
             studio: $("#deleteStudio").val() ,
             userRating: $("#deleteUserRating").val() ,
-            
+
             userNotes: $("#deleteUserNotes").val()
         };
-        
+
         var dvdData = JSON.stringify(dvd);
-        
+
         $.ajax({
             url: contextRoot + "/DVD/" + dvd.dvdId ,
             type: "DELETE" ,
@@ -209,25 +209,25 @@ $(document).ready(function () {
                 console.log("DVD not found");
             }
         });
-        
+
     });
-    
+
     // Create a Note
     $("#createNoteButton").on("click", function(e) {
-        
+
         e.preventDefault();
-        
+
         var dvd = {
           dvdId: $("#editId").val()
         };
-        
+
         var note = {
             noteText: $("#createNoteText").val(),
             dvd: dvd
         };
-        
+
         var noteData = JSON.stringify(note);
-        
+
         $.ajax({
            url: contextRoot + "/Note/",
            type: "POST",
@@ -242,11 +242,11 @@ $(document).ready(function () {
                clearAddNoteErrorMessages();
 
                var tableRow = buildEditNoteRow(note.noteText, note.noteId);
-               
+
                $("#editNoteTable").append( $(tableRow) );
 
                $("#createNoteModal").modal("toggle");
-               
+
            },
            error: function(data, status) {
 
@@ -259,15 +259,15 @@ $(document).ready(function () {
 
            }
         });
-        
+
     });
-    
+
     // Edit Note
     $("#editNoteModal").on("shown.bs.modal", function(e) {
-        
+
         var link = $(e.relatedTarget);
         var noteId = link.data("note-id");
-        
+
         $.ajax({
            url: contextRoot +  "/Note/" + noteId ,
            type: "GET" ,
@@ -276,36 +276,36 @@ $(document).ready(function () {
                xhr.setRequestHeader("Accept", "application/json");
            },
            success: function(data, status) {
-               
+
                $("#editNoteId").val(data.noteId);
                $("#editNoteText").val(data.noteText);
                $("#editNoteDvdId").val(data.dvd.dvdId);
-               
+
            },
            error: function(data, status) {
                console.log("Error reading Note");
            }
         });
-        
+
     });
-    
+
     // Functionality - Edit Note "Submit Changes" Button
     $("#editNoteButton").on("click", function(e) {
-        
+
         e.preventDefault();
-        
+
         var dvd = {
             dvdId: $("#editNoteDvdId").val()
         };
-        
+
         var note = {
             noteId: $("#editNoteId").val() ,
             noteText: $("#editNoteText").val() ,
             dvd: dvd
         };
-        
+
         var noteData = JSON.stringify(note);
-        
+
         $.ajax({
            url: contextRoot + "/Note/" + note.noteId ,
            type: "PUT" ,
@@ -318,9 +318,9 @@ $(document).ready(function () {
            success: function(data, status) { // A Note object is the response (data)
 
                clearEditNoteErrorMessages();
-               
+
                var tableRow = buildEditNoteRow(data.noteText, data.noteId);
-               
+
                $("#note-row-" + data.noteId).replaceWith( $(tableRow) );
 
                $("#editNoteModal").modal("hide");
@@ -342,15 +342,15 @@ $(document).ready(function () {
 
            }
         });
-        
+
     });
-    
+
     // Delete Note
     $("#deleteNoteModal").on("shown.bs.modal", function(e) {
-        
+
         link = $(e.relatedTarget);
         noteId = link.data("note-id");
-        
+
         $.ajax({
            url: contextRoot + "/Note/" +  noteId ,
            type: "GET" ,
@@ -366,18 +366,18 @@ $(document).ready(function () {
                console.log("Error with something");
            }
         });
-        
+
     });
-    
+
     // Functionality - Delete Note Button
     $("#deleteNoteButton").on("click", function(e) {
-        
+
         var note = {
             noteId: $("#deleteNoteId").val()
         };
-        
+
         var noteData = JSON.stringify(note);
-        
+
         $.ajax({
             url: contextRoot + "/Note/" + noteId ,
             type: "DELETE" ,
@@ -394,7 +394,7 @@ $(document).ready(function () {
                 console.log("Error in the Delete Note Button method");
             }
         });
-        
+
     });
 
     $(".addDVDFormElements").on("input", function() {
@@ -515,22 +515,6 @@ $(document).ready(function () {
 
     });
 
-    function buildDVDRow(data) {
-
-        var date = new Date(data.releaseDate);
-        var releaseYear = date.getFullYear();
-
-        return "\
-                <tr id=\"dvd-row-" + data.dvdId + "\"> \n\
-                    <td><a data-dvd-id=" + data.dvdId + " data-toggle=\"modal\" data-target=\"#showDVDModal\" data-backdrop=\"false\">" + data.title + "</a></td> \n\
-                    <td>" + releaseYear + "</td> \n\
-                    <td>" + data.mpaaRating + "</td> \n\
-                    <td><a data-dvd-id=" + data.dvdId + " data-toggle=\"modal\" data-target=\"#editDVDModal\" data-backdrop=\"false\">Edit</a></td> \n\
-                    <td><a data-dvd-id=" + data.dvdId + " data-toggle=\"modal\" data-target=\"#deleteDVDModal\" data-backdrop=\"false\">Delete</a></td> \n\
-                </tr>";
-
-    }
-
     function buildShowNoteRow(text) {
 
         return "\
@@ -588,9 +572,9 @@ $(document).ready(function () {
         $("#edit-noteText-validation-error").text("");
     }
 
-// Summary: Checks if fields marked as required have data in them
-// Parameter: The CSS id of the form to be checked
-// Returns: True/False whether the form is valid or not
+    // Summary: Checks if fields marked as required have data in them
+    // Parameter: The CSS id of the form to be checked
+    // Returns: True/False whether the form is valid or not
     function checkRequiredFieldValidation(formId) {
 
         var elementsInDVDForm = $("#" + formId).prop("elements"); // List all elements in the form
