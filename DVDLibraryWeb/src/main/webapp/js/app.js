@@ -13,41 +13,7 @@ $(document).ready(function () {
         }
     });
 
-    /* Read a DVD */
-    $("#showDVDModal").on("shown.bs.modal", function (e) {
 
-        var link = $(e.relatedTarget);
-        var dvdId = link.data("dvd-id");
-
-        $.ajax({
-           url: contextRoot + "/DVD/" + dvdId ,
-           type: "GET" ,
-           dataType: "json" ,
-           beforeSend: function(xhr) {
-               xhr.setRequestHeader("Content-Type", "application/json");
-           },
-           success: function(dvd) {
-
-               $("#showDVDModalHeader").text(dvd.dvd.title);
-
-               $("#showTitle").text(dvd.dvd.title);
-               $("#showReleaseDate").text(dvd.dvd.releaseDate);
-               $("#showMpaaRating").text(dvd.dvd.mpaaRating);
-               $("#showDirector").text(dvd.dvd.director);
-               $("#showStudio").text(dvd.dvd.studio);
-               $("#showUserRating").text(dvd.dvd.userRating);
-
-               for (var i = 0; i < dvd.dvdNoteList.length; i++) {
-                   var tableRow = buildShowNoteRow(dvd.dvdNoteList[i].noteText);
-                   $("#showNoteTable").append( $(tableRow) );
-               }
-
-           },
-           error: function() {
-               console.log("DVD not found");
-           }
-        });
-    });
 
     // Edit a DVD
     $("#editDVDModal").on("shown.bs.modal", function (e) {

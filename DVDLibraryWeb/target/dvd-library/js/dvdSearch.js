@@ -11,17 +11,17 @@ $(document).ready(function() {
             valueToSearchFor: $('#valueToSearchFor').val()
         };
 
-        var searchDVDCommandJSON = JSON.stringify(searchDVDCommand);
+        var searchDvdCommandJSON = JSON.stringify(searchDVDCommand);
 
         $.ajax({
-            url: contextRoot + "/DVD/Search/" ,
-            type: "POST" ,
-            data: searchDVDCommandJSON ,
-            dataType: "json" ,
+            url: contextRoot + "/DVD/Search/",
+            type: "POST",
+            data: searchDvdCommandJSON,
+            dataType: "json",
             beforeSend: function(xhr) {
                 xhr.setRequestHeader("Accept", "application/json");
                 xhr.setRequestHeader("Content-Type", "application/json");
-            } ,
+            },
             success: function(searchResultList, status) {
 
                 $.each(searchResultList, function(index, dvd) {

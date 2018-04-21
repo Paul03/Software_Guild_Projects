@@ -70,6 +70,8 @@
 
         </div>
 
+        <jsp:include page="showDvdModal.jsp" />
+
         <script>
             var contextRoot = "${pageContext.request.contextPath}";
         </script>
