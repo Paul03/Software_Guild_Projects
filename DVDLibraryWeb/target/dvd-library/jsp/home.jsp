@@ -141,7 +141,7 @@
 
         </div>
 
-        <!-- Show DVD Modal -->
+        <!-- Show Dvd Modal -->
         <div class="modal fade" id="showDVDModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -219,7 +219,7 @@
             </div>
         </div>
 
-        <!-- Edit DVD Modal -->
+        <!-- Edit Dvd Modal -->
         <div class="modal" id="editDVDModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -360,7 +360,7 @@
             </div>
         </div>
 
-        <!-- Delete DVD Modal -->
+        <!-- Delete Dvd Modal -->
         <div class="modal fade" id="deleteDVDModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">

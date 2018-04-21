@@ -1,10 +1,5 @@
-<%-- 
-    Document   : deleteNote
-    Created on : Sep 17, 2016, 4:30:32 PM
-    Author     : paulharding
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 
@@ -26,7 +21,6 @@
 
         <div class="container">
 
-            <jsp:include page="header.jsp" />
             <jsp:include page="navbar.jsp" />
 
             <div class="row">
