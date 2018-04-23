@@ -71,6 +71,11 @@
         </div>
 
         <jsp:include page="showDvdModal.jsp" />
+        <jsp:include page="editDvdModal.jsp" />
+        <jsp:include page="deleteDvdModal.jsp" />
+        <jsp:include page="createNoteModal.jsp" />
+        <jsp:include page="editNoteModal.jsp" />
+        <jsp:include page="deleteNoteModal.jsp" />
 
         <script>
             var contextRoot = "${pageContext.request.contextPath}";
@@ -78,8 +83,10 @@
 
         <script src="${pageContext.request.contextPath}/js/jquery-3.1.0.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+        <script src="${pageContext.request.contextPath}/js/app.js"></script>
         <script src="${pageContext.request.contextPath}/js/dvdSearch.js"></script>
         <script src="${pageContext.request.contextPath}/js/dvd.js"></script>
+        <script src="${pageContext.request.contextPath}/js/note.js"></script>
 
     </body>
 
