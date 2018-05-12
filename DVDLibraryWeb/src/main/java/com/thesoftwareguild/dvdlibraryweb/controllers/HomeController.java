@@ -28,6 +28,7 @@ public class HomeController {
     public String home(Map model) {
 
         List<Dvd> dvdList = dvdDao.list();
+
         model.put("dvdList", dvdList);
         model.put("addDVDCommand", new AddDvdCommand());
 

@@ -38,13 +38,12 @@ public class DVDController {
     @ResponseBody
     public ShowDvdViewModel show(@PathVariable("id") Integer dvdId) {
 
-        Dvd d = dvdDao.read(dvdId);
-
-        List<Note> dvdNotes = noteDao.findByDVD(d);
+        Dvd dvd = dvdDao.read(dvdId);
+        List<Note> dvdNotes = noteDao.findByDVD(dvd);
 
         ShowDvdViewModel showDvdViewModel = new ShowDvdViewModel();
 
-        showDvdViewModel.setDvd(d);
+        showDvdViewModel.setDvd(dvd);
         showDvdViewModel.setDvdNoteList(dvdNotes);
 
         return showDvdViewModel;
@@ -55,17 +54,16 @@ public class DVDController {
     @ResponseBody
     public Dvd create(@Valid @RequestBody AddDvdCommand commandObject) {
 
-        Dvd dvd = getDVDfromCommandObject(commandObject);
-        Dvd d = dvdDao.create(dvd);
+        Dvd dvd = dvdDao.create( commandObject.toDvd() );
 
         if (!commandObject.getNoteText().trim().equals("")){
 
-            Note note = getNoteFromCommandObject(commandObject);
-            note.setDvd(d);
+            Note note = commandObject.toNote();
+            note.setDvd(dvd);
             noteDao.create(note);
         }
 
-        return d;
+        return dvd;
 
     }
 
@@ -83,7 +81,7 @@ public class DVDController {
     @Transactional(propagation = Propagation.REQUIRED)
     @ResponseBody
     public Dvd delete(@PathVariable("id") Integer id) {
-        
+
         Dvd dvd = dvdDao.read(id);
 
         List<Note> dvdNoteList = noteDao.findByDVD(dvd);
@@ -143,28 +141,5 @@ public class DVDController {
 
         return searchResultList;
     }
-    
-    private Dvd getDVDfromCommandObject(AddDvdCommand commandObject) {
 
-        Dvd dvd = new Dvd();
-
-        dvd.setTitle(commandObject.getTitle());
-        dvd.setReleaseDate(commandObject.getReleaseDate());
-        dvd.setMpaaRating(commandObject.getMpaaRating());
-        dvd.setDirector(commandObject.getDirector());
-        dvd.setStudio(commandObject.getStudio());
-        dvd.setUserRating(commandObject.getUserRating());
-
-        return dvd;
-
-    }
-
-    private Note getNoteFromCommandObject(AddDvdCommand commandObject) {
-
-        Note note = new Note();
-        note.setNoteText(commandObject.getNoteText());
-
-        return note;
-
-    }
 }

@@ -7,28 +7,53 @@ import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 
 public class AddDvdCommand {
-    
+
     @NotEmpty(message="Title is a required field")
     private String title;
-    
+
     @NotNull(message="Release date is a required field")
     @DateTimeFormat(pattern="yyyy-MM-dd")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd", timezone="America/Phoenix")
     private Date releaseDate;
-    
+
     @NotEmpty(message="MPAA Rating is a required field")
     private String mpaaRating;
-    
+
     @NotEmpty(message="Director is a required field")
     private String director;
-    
+
     @NotEmpty(message="Studio is a required field")
     private String studio;
-    
+
     @NotNull(message="Your rating is a required field")
     private int userRating;
-    
+
     private String noteText;
+
+
+    public Dvd toDvd() {
+
+        Dvd dvd = new Dvd();
+
+        dvd.setTitle(title);
+        dvd.setReleaseDate(releaseDate);
+        dvd.setMpaaRating(mpaaRating);
+        dvd.setDirector(director);
+        dvd.setStudio(studio);
+        dvd.setUserRating(userRating);
+
+        return dvd;
+
+    }
+
+    public Note toNote() {
+
+        Note note = new Note();
+        note.setNoteText(noteText);
+
+        return note;
+
+    }
 
 
 
@@ -87,5 +112,5 @@ public class AddDvdCommand {
     public void setNoteText(String noteText) {
         this.noteText = noteText;
     }
-    
+
 }
