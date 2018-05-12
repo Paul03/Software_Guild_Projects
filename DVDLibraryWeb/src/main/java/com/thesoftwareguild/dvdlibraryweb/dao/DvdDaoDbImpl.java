@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import org.springframework.jdbc.core.RowMapper;
 
-public class DVDDaoDbImpl implements DVDDao {
+public class DvdDaoDbImpl implements DvdDao {
 
     private JdbcTemplate jdbcTemplate;
 
@@ -29,7 +29,7 @@ public class DVDDaoDbImpl implements DVDDao {
     private static final String SQL_SELECT_NEWEST_DVD = "SELECT * FROM dvd ORDER BY release_date desc;";
     private static final String SQL_SELECT_OLDEST_DVD = "SELECT * FROM dvd ORDER BY release_date asc;";
 
-    public DVDDaoDbImpl(JdbcTemplate jdbcTemplate) {
+    public DvdDaoDbImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 

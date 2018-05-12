@@ -4,13 +4,13 @@ import com.thesoftwareguild.dvdlibraryweb.dto.Dvd;
 
 import java.util.*;
 
-public class DVDDaoInMemoryImpl implements DVDDao {
+public class DvdDaoInMemoryImpl implements DvdDao {
 
     private List<Dvd> dvdLibrary = new ArrayList<>();
     private int currentYear = Calendar.getInstance().get(Calendar.YEAR);
     private long nextId = 1;
 
-    public DVDDaoInMemoryImpl() {
+    public DvdDaoInMemoryImpl() {
 
     }
 
@@ -249,7 +249,7 @@ public class DVDDaoInMemoryImpl implements DVDDao {
                 result.add(d);
             }
         }
-        
+
         Collections.sort(result);
 
         return result;
@@ -258,7 +258,7 @@ public class DVDDaoInMemoryImpl implements DVDDao {
 
     @Override
     public List<Dvd> searchByTitle(String title) {
-        
+
         List<Dvd> result = new ArrayList();
 
         try {
@@ -276,8 +276,8 @@ public class DVDDaoInMemoryImpl implements DVDDao {
         Collections.sort(result);
 
         return result;
-        
-        
+
+
     }
 
 }

@@ -1,6 +1,6 @@
 package com.thesoftwareguild.dvdlibraryweb.controllers;
 
-import com.thesoftwareguild.dvdlibraryweb.dao.DVDDao;
+import com.thesoftwareguild.dvdlibraryweb.dao.DvdDao;
 import com.thesoftwareguild.dvdlibraryweb.dto.AddDvdCommand;
 import com.thesoftwareguild.dvdlibraryweb.dto.Dvd;
 import com.thesoftwareguild.dvdlibraryweb.ui.ViewSelector;
@@ -16,10 +16,10 @@ import java.util.Map;
 public class HomeController {
 
     private ViewSelector viewSelector;
-    private DVDDao dvdDao;
+    private DvdDao dvdDao;
 
     @Inject
-    public HomeController(ViewSelector viewSelector, DVDDao dvdDao) {
+    public HomeController(ViewSelector viewSelector, DvdDao dvdDao) {
         this.viewSelector = viewSelector;
         this.dvdDao = dvdDao;
     }

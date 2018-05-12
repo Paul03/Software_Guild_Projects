@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.*;
 
-public class DVDDaoImpl implements DVDDao {
+public class DvdDaoImpl implements DvdDao {
 
     private static final String FILENAME = "dvds.txt";
     private static final String TOKEN = "::";
@@ -19,7 +19,7 @@ public class DVDDaoImpl implements DVDDao {
     private List<Dvd> dvdLibrary = null;
     private long nextId = 1;
 
-    public DVDDaoImpl() {
+    public DvdDaoImpl() {
 
         dvdLibrary = decode();
 
@@ -170,7 +170,7 @@ public class DVDDaoImpl implements DVDDao {
                 } else {
                     yearString = "YYYY";
                 }
-                
+
                 Date dvdReleaseDate = new Date();
 
                 Integer month;

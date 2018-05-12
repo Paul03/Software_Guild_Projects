@@ -20,19 +20,19 @@ public class NoteDaoImpl implements NoteDao {
     private List<Note> noteLibrary;
     private long nextId = 1;
 
-    private DVDDao dvdDao;
+    private DvdDao dvdDao;
 
-    public NoteDaoImpl(DVDDao dao) {
+    public NoteDaoImpl(DvdDao dao) {
         this.dvdDao = dao;
-        
+
         noteLibrary = decode();
-        
+
         for (Note n : noteLibrary) {
             if (n.getNoteId() >= nextId) {
                 nextId = n.getNoteId() + 1;
             }
         }
-        
+
     }
 
     @Override
@@ -43,7 +43,7 @@ public class NoteDaoImpl implements NoteDao {
         nextId++;
 
         noteLibrary.add(note);
-        
+
         encode();
 
         return new Note(note);
@@ -72,7 +72,7 @@ public class NoteDaoImpl implements NoteDao {
                 break;
             }
         }
-        
+
         encode();
 
     }
@@ -86,7 +86,7 @@ public class NoteDaoImpl implements NoteDao {
                 break;
             }
         }
-        
+
         encode();
 
     }
@@ -163,7 +163,7 @@ public class NoteDaoImpl implements NoteDao {
         return dvdNotes;
 
     }
-    
+
     @Override
     public double getAverageNumberOfNotes() {
 

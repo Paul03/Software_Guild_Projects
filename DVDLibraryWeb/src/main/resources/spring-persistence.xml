@@ -21,7 +21,7 @@
         <property name="dataSource" ref="dataSource" />
     </bean>
 
-    <bean id="dvdDao" class="com.thesoftwareguild.dvdlibraryweb.dao.DVDDaoDbImpl">
+    <bean id="dvdDao" class="com.thesoftwareguild.dvdlibraryweb.dao.DvdDaoDbImpl">
         <constructor-arg ref="jdbcTemplate" />
     </bean>
 

@@ -5,7 +5,7 @@
  */
 package com.thesoftwareguild.dvdlibraryweb.tests.dao;
 
-import com.thesoftwareguild.dvdlibraryweb.dao.DVDDao;
+import com.thesoftwareguild.dvdlibraryweb.dao.DvdDao;
 import com.thesoftwareguild.dvdlibraryweb.dto.Dvd;
 
 import java.util.Date;
@@ -26,7 +26,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
  */
 public class DvdDaoJUnitTest {
 
-    private DVDDao dvdDao;
+    private DvdDao dvdDao;
 
     private Dvd miracle;
     private Dvd moreThanAGame;
@@ -35,12 +35,12 @@ public class DvdDaoJUnitTest {
 
     public DvdDaoJUnitTest() {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-persistence.xml");
-        dvdDao = ctx.getBean("dvdDao", DVDDao.class);
+        dvdDao = ctx.getBean("dvdDao", DvdDao.class);
     }
 
     @Before
     public void setUp() {
-        
+
         ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-persistence.xml");
 
         JdbcTemplate cleaner = (JdbcTemplate) ctx.getBean("jdbcTemplate");
@@ -152,11 +152,11 @@ public class DvdDaoJUnitTest {
         Dvd deletedDvd = dvdDao.read(addedDvd.getDvdId());
         Assert.assertNull(readDvd); // I want to put something here that is NOT Null
                                     // (if it reaches this point, then the test should fail)
-        
+
         } catch(EmptyResultDataAccessException ex) {
-            
+
         }
-        
+
     }
 
     @Test

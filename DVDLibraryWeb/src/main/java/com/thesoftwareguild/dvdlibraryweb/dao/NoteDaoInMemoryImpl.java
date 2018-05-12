@@ -10,9 +10,9 @@ public class NoteDaoInMemoryImpl implements NoteDao {
     private List<Note> noteLibrary = new ArrayList<>();
     private Integer nextId = 1;
 
-    private DVDDao dvdDao;
+    private DvdDao dvdDao;
 
-    public NoteDaoInMemoryImpl(DVDDao dao) {
+    public NoteDaoInMemoryImpl(DvdDao dao) {
         this.dvdDao = dao;
 
     }
@@ -81,7 +81,7 @@ public class NoteDaoInMemoryImpl implements NoteDao {
         return dvdNotes;
 
     }
-    
+
     @Override
     public double getAverageNumberOfNotes() {
 

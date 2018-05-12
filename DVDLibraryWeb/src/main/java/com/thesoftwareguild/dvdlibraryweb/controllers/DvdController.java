@@ -1,6 +1,6 @@
 package com.thesoftwareguild.dvdlibraryweb.controllers;
 
-import com.thesoftwareguild.dvdlibraryweb.dao.DVDDao;
+import com.thesoftwareguild.dvdlibraryweb.dao.DvdDao;
 import com.thesoftwareguild.dvdlibraryweb.dao.NoteDao;
 import com.thesoftwareguild.dvdlibraryweb.dto.AddDvdCommand;
 import com.thesoftwareguild.dvdlibraryweb.dto.Dvd;
@@ -23,13 +23,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping(value = "/DVD")
-public class DVDController {
+public class DvdController {
 
-    private DVDDao dvdDao;
+    private DvdDao dvdDao;
     private NoteDao noteDao;
 
     @Inject
-    public DVDController(DVDDao dvdDao, NoteDao noteDao) {
+    public DvdController(DvdDao dvdDao, NoteDao noteDao) {
         this.dvdDao = dvdDao;
         this.noteDao = noteDao;
     }

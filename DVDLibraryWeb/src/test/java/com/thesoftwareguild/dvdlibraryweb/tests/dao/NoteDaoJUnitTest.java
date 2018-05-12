@@ -5,7 +5,7 @@
  */
 package com.thesoftwareguild.dvdlibraryweb.tests.dao;
 
-import com.thesoftwareguild.dvdlibraryweb.dao.DVDDao;
+import com.thesoftwareguild.dvdlibraryweb.dao.DvdDao;
 import com.thesoftwareguild.dvdlibraryweb.dao.NoteDao;
 import com.thesoftwareguild.dvdlibraryweb.dto.Dvd;
 import com.thesoftwareguild.dvdlibraryweb.dto.Note;
@@ -27,7 +27,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 public class NoteDaoJUnitTest {
 
     private NoteDao noteDao;
-    private DVDDao dvdDao;
+    private DvdDao dvdDao;
 
     private Dvd miracle;
     private Dvd zootopia;
@@ -40,7 +40,7 @@ public class NoteDaoJUnitTest {
     public NoteDaoJUnitTest() {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-persistence.xml");
         noteDao = ctx.getBean("noteDao", NoteDao.class);
-        dvdDao = ctx.getBean("dvdDao", DVDDao.class);
+        dvdDao = ctx.getBean("dvdDao", DvdDao.class);
 
     }
 
@@ -175,26 +175,26 @@ public class NoteDaoJUnitTest {
     /*
     @Test
     public void testGetAverageNumberOfNotes() {
-        
+
         Dvd testDVD1 = new Dvd();
         testDVD1.setTitle("Test Dvd 1");
         Dvd testDVD2 = new Dvd();
         testDVD2.setTitle("Test Dvd 2");
         Dvd testDVD3 = new Dvd();
         testDVD3.setTitle("Test Dvd 3");
-        
+
         dvdDao.create(testDVD1);
         dvdDao.create(testDVD2);
         dvdDao.create(testDVD3);
-        
+
         Note testNote = new Note();
-        
+
         noteDao.create(testNote);
-        
+
         double averageNumberOfNotes = noteDao.getAverageNumberOfNotes();
-        
+
         Assert.assertEquals(0.33, averageNumberOfNotes, 2);
-        
+
     }
     */
 

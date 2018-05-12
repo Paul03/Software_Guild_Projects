@@ -29,5 +29,9 @@
         <constructor-arg ref="dvdDao" />
         <constructor-arg ref="jdbcTemplate" />
     </bean>
-    
+
+    <bean id="viewSelector" class="com.thesoftwareguild.dvdlibraryweb.ui.JqueryJspViewSelector">
+
+    </bean>
+
 </beans>

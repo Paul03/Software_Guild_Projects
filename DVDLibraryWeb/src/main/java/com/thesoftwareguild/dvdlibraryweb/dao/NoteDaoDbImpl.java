@@ -13,7 +13,7 @@ import java.util.List;
 
 public class NoteDaoDbImpl implements NoteDao {
 
-    private DVDDao dvdDao;
+    private DvdDao dvdDao;
     private JdbcTemplate jdbcTemplate;
 
     private static final String SQL_INSERT_NOTE = "INSERT INTO note (note_text, dvd_id) VALUES(?, ?);";
@@ -22,7 +22,7 @@ public class NoteDaoDbImpl implements NoteDao {
     private static final String SQL_DELETE_NOTE = "DELETE FROM note WHERE id=?;";
     private static final String SQL_SELECT_BY_DVD = "SELECT * FROM note WHERE dvd_id=?;";
 
-    public NoteDaoDbImpl(DVDDao dvdDao, JdbcTemplate jdbcTemplate) {
+    public NoteDaoDbImpl(DvdDao dvdDao, JdbcTemplate jdbcTemplate) {
         this.dvdDao = dvdDao;
         this.jdbcTemplate = jdbcTemplate;
     }
