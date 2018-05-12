@@ -1,12 +1,8 @@
-<%-- 
-    Document   : create
-    Created on : Sep 15, 2016, 3:18:43 PM
-    Author     : paulharding
---%>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 
@@ -36,14 +32,13 @@
 
         <div class="container">
 
-            <jsp:include page="header.jsp" />
             <jsp:include page="navbar.jsp" />
 
             <br />
 
             <h2>New DVD</h2>
 
-            <sf:form action="${pageContext.request.contextPath}/DVD/create" commandName="addDVDCommand" method="POST">
+            <sf:form action="${pageContext.request.contextPath}/DVD/create" commandName="addDvdCommand" method="POST">
 
                 <div class="row">
 
@@ -102,7 +97,7 @@
 
                             <tr>
                                 <td>Note</td>
-                                <td><input type="text" name="noteText"</td>
+                                <td><input type="text" name="noteText" /></td>
                             </tr>
 
                             <tr>

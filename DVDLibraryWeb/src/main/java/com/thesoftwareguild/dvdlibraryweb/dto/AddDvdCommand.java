@@ -2,14 +2,11 @@ package com.thesoftwareguild.dvdlibraryweb.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.util.Date;
-import java.util.List;
 import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 
-public class DVD implements Comparable {
-
-    private long dvdId;
+public class AddDvdCommand {
 
     @NotEmpty(message="Title is a required field")
     private String title;
@@ -31,30 +28,34 @@ public class DVD implements Comparable {
     @NotNull(message="Your rating is a required field")
     private int userRating;
 
-    private List<Note> userNotes;
+    private String noteText;
 
-    public DVD() {
+
+    public Dvd toDvd() {
+
+        Dvd dvd = new Dvd();
+
+        dvd.setTitle(title);
+        dvd.setReleaseDate(releaseDate);
+        dvd.setMpaaRating(mpaaRating);
+        dvd.setDirector(director);
+        dvd.setStudio(studio);
+        dvd.setUserRating(userRating);
+
+        return dvd;
 
     }
 
-    public DVD(DVD dvd) {
-        this.dvdId = dvd.getDvdId();
-        this.title = dvd.getTitle();
-        this.releaseDate = dvd.getReleaseDate();
-        this.mpaaRating = dvd.getMpaaRating();
-        this.director = dvd.getDirector();
-        this.studio = dvd.getStudio();
-        this.userRating = dvd.getUserRating();
-        this.userNotes = dvd.getUserNotes();
+    public Note toNote() {
+
+        Note note = new Note();
+        note.setNoteText(noteText);
+
+        return note;
+
     }
 
-    public long getDvdId() {
-        return dvdId;
-    }
 
-    public void setDvdId(long dvdId) {
-        this.dvdId = dvdId;
-    }
 
     public String getTitle() {
         return title;
@@ -104,21 +105,12 @@ public class DVD implements Comparable {
         this.userRating = userRating;
     }
 
-    public List<Note> getUserNotes() {
-        return userNotes;
+    public String getNoteText() {
+        return noteText;
     }
 
-    public void setUserNotes(List<Note> userNotes) {
-        this.userNotes = userNotes;
-    }
-
-    @Override
-    public int compareTo(Object o) {
-
-        DVD dvdToCompare = (DVD) o;
-        String titleToCompare = dvdToCompare.getTitle();
-
-        return this.title.compareToIgnoreCase(titleToCompare);
+    public void setNoteText(String noteText) {
+        this.noteText = noteText;
     }
 
 }

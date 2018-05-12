@@ -1,6 +1,6 @@
 package com.thesoftwareguild.dvdlibraryweb.dao;
 
-import com.thesoftwareguild.dvdlibraryweb.dto.DVD;
+import com.thesoftwareguild.dvdlibraryweb.dto.Dvd;
 import com.thesoftwareguild.dvdlibraryweb.dto.Note;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -17,33 +17,33 @@ public class NoteDaoImpl implements NoteDao {
     private final String FILENAME = "notes.txt";
     private final String TOKEN = "::";
 
-    private List<Note> noteLibrary = null;
+    private List<Note> noteLibrary;
     private long nextId = 1;
 
-    private DVDDao dvdDao;
+    private DvdDao dvdDao;
 
-    public NoteDaoImpl(DVDDao dao) {
+    public NoteDaoImpl(DvdDao dao) {
         this.dvdDao = dao;
-        
+
         noteLibrary = decode();
-        
+
         for (Note n : noteLibrary) {
             if (n.getNoteId() >= nextId) {
                 nextId = n.getNoteId() + 1;
             }
         }
-        
+
     }
 
     @Override
-    public Note create(Note note) {
+    public Note insert(Note note) {
 
         note.setNoteId(nextId);
 
         nextId++;
 
         noteLibrary.add(note);
-        
+
         encode();
 
         return new Note(note);
@@ -51,7 +51,7 @@ public class NoteDaoImpl implements NoteDao {
     }
 
     @Override
-    public Note read(long id) {
+    public Note retrieve(long id) {
 
         for (Note n : noteLibrary) {
             if (n.getNoteId() == id) {
@@ -72,7 +72,7 @@ public class NoteDaoImpl implements NoteDao {
                 break;
             }
         }
-        
+
         encode();
 
     }
@@ -86,18 +86,14 @@ public class NoteDaoImpl implements NoteDao {
                 break;
             }
         }
-        
+
         encode();
 
     }
 
     private void encode() {
 
-        PrintWriter out = null;
-
-        try {
-
-            out = new PrintWriter(new FileWriter(FILENAME));
+        try (PrintWriter out = new PrintWriter(new FileWriter(FILENAME))) {
 
             for (Note n : noteLibrary) {
 
@@ -114,17 +110,13 @@ public class NoteDaoImpl implements NoteDao {
 
         } catch (IOException ex) {
 
-        } finally {
-
-            out.close();
-
         }
 
     }
 
     private List<Note> decode() {
 
-        List<Note> tempNoteList = new ArrayList();
+        List<Note> tempNoteList = new ArrayList<>();
 
         try {
 
@@ -143,7 +135,7 @@ public class NoteDaoImpl implements NoteDao {
 
                 note.setNoteId(noteId);
                 note.setNoteText(stringParts[1]);
-                note.setDvd(dvdDao.read(dvdId));
+                note.setDvd(dvdDao.retrieve(dvdId));
 
                 tempNoteList.add(note);
 
@@ -158,9 +150,9 @@ public class NoteDaoImpl implements NoteDao {
     }
 
     @Override
-    public List<Note> findByDVD(DVD dvd) {
+    public List<Note> findByDvd(Dvd dvd) {
 
-        List<Note> dvdNotes = new ArrayList();
+        List<Note> dvdNotes = new ArrayList<>();
 
         for (Note n : noteLibrary) {
             if (n.getDvd().getDvdId() == dvd.getDvdId()) {
@@ -171,15 +163,13 @@ public class NoteDaoImpl implements NoteDao {
         return dvdNotes;
 
     }
-    
+
     @Override
     public double getAverageNumberOfNotes() {
 
-        List<DVD> tempDVDList = dvdDao.list();
+        List<Dvd> tempDvdList = dvdDao.all();
 
-        double average = ((double) noteLibrary.size()) / ((double) tempDVDList.size());
-
-        return average;
+        return ((double) noteLibrary.size()) / ((double) tempDvdList.size());
 
     }
 

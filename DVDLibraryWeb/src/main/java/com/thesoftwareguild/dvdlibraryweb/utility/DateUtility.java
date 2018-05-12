@@ -4,7 +4,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class DVDUtility {
+public class DateUtility {
     
     public static String formatDateForEncode(Date dateToFormat) {
 

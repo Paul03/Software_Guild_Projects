@@ -1,8 +1,9 @@
 package com.thesoftwareguild.dvdlibraryweb.dao;
 
-import com.thesoftwareguild.dvdlibraryweb.dto.DVD;
+import com.thesoftwareguild.dvdlibraryweb.dto.Dvd;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import org.springframework.jdbc.core.RowMapper;
 
-public class DVDDaoDbImpl implements DVDDao {
+public class DvdDaoDbImpl implements DvdDao {
 
     private JdbcTemplate jdbcTemplate;
 
@@ -28,13 +29,13 @@ public class DVDDaoDbImpl implements DVDDao {
     private static final String SQL_SELECT_NEWEST_DVD = "SELECT * FROM dvd ORDER BY release_date desc;";
     private static final String SQL_SELECT_OLDEST_DVD = "SELECT * FROM dvd ORDER BY release_date asc;";
 
-    public DVDDaoDbImpl(JdbcTemplate jdbcTemplate) {
+    public DvdDaoDbImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public DVD create(DVD dvd) {
+    public Dvd insert(Dvd dvd) {
 
         jdbcTemplate.update(SQL_INSERT_DVD,
                 dvd.getTitle(),
@@ -51,16 +52,15 @@ public class DVDDaoDbImpl implements DVDDao {
     }
 
     @Override
-    public DVD read(long id) {
-        
-        DVD dvd = jdbcTemplate.queryForObject(SQL_SELECT_DVD, new DVDMapper(), id);
-        return dvd;
-        
+    public Dvd retrieve(long id) {
+
+        return jdbcTemplate.queryForObject(SQL_SELECT_DVD, new DVDMapper(), id);
+
     }
 
     @Override
-    public void update(DVD dvd) {
-        
+    public void update(Dvd dvd) {
+
         jdbcTemplate.update(SQL_UPDATE_DVD,
                 dvd.getTitle(),
                 dvd.getReleaseDate(),
@@ -73,98 +73,79 @@ public class DVDDaoDbImpl implements DVDDao {
     }
 
     @Override
-    public void delete(DVD dvd) {
+    public void delete(Dvd dvd) {
 
         jdbcTemplate.update("DELETE FROM note WHERE dvd_id=?", dvd.getDvdId());
-        
         jdbcTemplate.update(SQL_DELETE_DVD, dvd.getDvdId());
 
     }
 
     @Override
-    public List<DVD> list() {
-        
-        List<DVD> dvdList = jdbcTemplate.query(SQL_SELECT_ALL_DVD, new DVDMapper());
-        
-        return dvdList;
+    public List<Dvd> all() {
+
+        return jdbcTemplate.query(SQL_SELECT_ALL_DVD, new DVDMapper());
 
     }
 
     @Override
-    public List<DVD> searchLastNYears(int years) {
+    public List<Dvd> searchLastNYears(int years) {
 
-        List<DVD> searchResultList = jdbcTemplate.query(SQL_SELECT_LAST_N_YEARS, new DVDMapper(), years);
-
-        return searchResultList;
+        return jdbcTemplate.query(SQL_SELECT_LAST_N_YEARS, new DVDMapper(), years);
 
     }
 
     @Override
-    public List<DVD> searchByMPAARating(String rating) {
+    public List<Dvd> searchByMPAARating(String rating) {
 
-        List<DVD> searchResultsList = jdbcTemplate.query(SQL_SELECT_MPAA_RATING, new DVDMapper(), rating);
-
-        return searchResultsList;
+        return jdbcTemplate.query(SQL_SELECT_MPAA_RATING, new DVDMapper(), rating);
 
     }
 
     @Override
-    public List<DVD> searchByDirector(String directorName) {
+    public List<Dvd> searchByDirector(String directorName) {
 
-        List<DVD> searchResultsList = jdbcTemplate.query(SQL_SELECT_DIRECTOR, new DVDMapper(), directorName);
-
-        return searchResultsList;
+        return jdbcTemplate.query(SQL_SELECT_DIRECTOR, new DVDMapper(), directorName);
 
     }
 
     @Override
-    public List<DVD> searchByStudio(String studioName) {
+    public List<Dvd> searchByStudio(String studioName) {
 
-        List<DVD> searchResultsList = jdbcTemplate.query(SQL_SELECT_STUDIO, new DVDMapper(), studioName);
-
-        return searchResultsList;
+        return jdbcTemplate.query(SQL_SELECT_STUDIO, new DVDMapper(), studioName);
 
     }
 
     @Override
     public Double averageAge() {
 
-        Double result = jdbcTemplate.queryForObject(SQL_AVERAGE_AGE, Double.class);
-
-        return result;
+        return jdbcTemplate.queryForObject(SQL_AVERAGE_AGE, Double.class);
     }
 
     @Override
-    public List<DVD> findNewestDVD() {
+    public List<Dvd> findNewestDVD() {
 
-        List<DVD> sortedDVDList = jdbcTemplate.query(SQL_SELECT_NEWEST_DVD, new DVDMapper());
-
-        return sortedDVDList;
+        return jdbcTemplate.query(SQL_SELECT_NEWEST_DVD, new DVDMapper());
     }
 
     @Override
-    public List<DVD> findOldestDVD() {
+    public List<Dvd> findOldestDVD() {
 
-        List<DVD> sortedDVDList = jdbcTemplate.query(SQL_SELECT_OLDEST_DVD, new DVDMapper());
-
-        return sortedDVDList;
+        return jdbcTemplate.query(SQL_SELECT_OLDEST_DVD, new DVDMapper());
 
     }
 
     @Override
-    public List<DVD> searchByTitle(String title) {
+    public List<Dvd> searchByTitle(String title) {
 
-        List<DVD> searchResultsList = jdbcTemplate.query(SQL_SELECT_TITLE, new DVDMapper(), title);
-
-        return searchResultsList;
+        return jdbcTemplate.query(SQL_SELECT_TITLE, new DVDMapper(), title);
     }
-    
-    private static final class DVDMapper implements RowMapper<DVD> {
+
+    private static final class DVDMapper implements RowMapper<Dvd> {
 
         @Override
-        public DVD mapRow(ResultSet resultSet, int i) throws SQLException {
+        public Dvd mapRow(ResultSet resultSet, int i) throws SQLException {
 
-            DVD dvd = new DVD();
+            Dvd dvd = new Dvd();
 
             dvd.setDvdId(resultSet.getInt("id"));
             dvd.setTitle(resultSet.getString("title"));
@@ -173,11 +154,10 @@ public class DVDDaoDbImpl implements DVDDao {
             dvd.setDirector(resultSet.getString("director"));
             dvd.setStudio(resultSet.getString("studio"));
             dvd.setUserRating(resultSet.getInt("user_rating"));
-            
 
             return dvd;
 
         }
     }
-    
+
 }

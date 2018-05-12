@@ -1,6 +1,6 @@
 package com.thesoftwareguild.dvdlibraryweb.dao;
 
-import com.thesoftwareguild.dvdlibraryweb.dto.DVD;
+import com.thesoftwareguild.dvdlibraryweb.dto.Dvd;
 import com.thesoftwareguild.dvdlibraryweb.dto.Note;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -13,23 +13,23 @@ import java.util.List;
 
 public class NoteDaoDbImpl implements NoteDao {
 
-    private DVDDao dvdDao;
+    private DvdDao dvdDao;
     private JdbcTemplate jdbcTemplate;
 
     private static final String SQL_INSERT_NOTE = "INSERT INTO note (note_text, dvd_id) VALUES(?, ?);";
     private static final String SQL_SELECT_NOTE = "SELECT * FROM note WHERE id=?;";
-    private static final String SQL_UPDATE_NOTE = "UPDATE note SET note_text=? dvd_id=? WHERE id=?;";
+    private static final String SQL_UPDATE_NOTE = "UPDATE note SET note_text=?, dvd_id=? WHERE id=?;";
     private static final String SQL_DELETE_NOTE = "DELETE FROM note WHERE id=?;";
     private static final String SQL_SELECT_BY_DVD = "SELECT * FROM note WHERE dvd_id=?;";
 
-    public NoteDaoDbImpl(DVDDao dvdDao, JdbcTemplate jdbcTemplate) {
+    public NoteDaoDbImpl(DvdDao dvdDao, JdbcTemplate jdbcTemplate) {
         this.dvdDao = dvdDao;
         this.jdbcTemplate = jdbcTemplate;
     }
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public Note create(Note note) {
+    public Note insert(Note note) {
 
         jdbcTemplate.update(SQL_INSERT_NOTE,
                 note.getNoteText(),
@@ -44,11 +44,10 @@ public class NoteDaoDbImpl implements NoteDao {
     }
 
     @Override
-    public Note read(long id) {
+    public Note retrieve(long id) {
 
-        Note n = jdbcTemplate.queryForObject(SQL_SELECT_NOTE, new NoteMapper(), id);
+        return jdbcTemplate.queryForObject(SQL_SELECT_NOTE, new NoteMapper(), id);
 
-        return n;
     }
 
     @Override
@@ -69,10 +68,10 @@ public class NoteDaoDbImpl implements NoteDao {
     }
 
     @Override
-    public List<Note> findByDVD(DVD dvd) {
+    public List<Note> findByDvd(Dvd dvd) {
 
-        List<Note> dvdNoteList = jdbcTemplate.query(SQL_SELECT_BY_DVD, new NoteMapper(), dvd.getDvdId());
-        return dvdNoteList;
+        return jdbcTemplate.query(SQL_SELECT_BY_DVD, new NoteMapper(), dvd.getDvdId());
+
     }
 
     @Override
@@ -87,7 +86,7 @@ public class NoteDaoDbImpl implements NoteDao {
 
             Integer dvdId = resultSet.getInt("dvd_id");
 
-            DVD dvd = dvdDao.read(dvdId);
+            Dvd dvd = dvdDao.retrieve(dvdId);
 
             Note note = new Note();
 

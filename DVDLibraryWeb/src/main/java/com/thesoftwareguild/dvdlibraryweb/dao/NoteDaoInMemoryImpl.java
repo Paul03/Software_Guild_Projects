@@ -1,27 +1,24 @@
 package com.thesoftwareguild.dvdlibraryweb.dao;
 
-import com.thesoftwareguild.dvdlibraryweb.dto.DVD;
+import com.thesoftwareguild.dvdlibraryweb.dto.Dvd;
 import com.thesoftwareguild.dvdlibraryweb.dto.Note;
 import java.util.ArrayList;
 import java.util.List;
 
 public class NoteDaoInMemoryImpl implements NoteDao {
 
-    private final String FILENAME = "notes.txt";
-    private final String TOKEN = "::";
-
     private List<Note> noteLibrary = new ArrayList<>();
     private Integer nextId = 1;
 
-    private DVDDao dvdDao;
+    private DvdDao dvdDao;
 
-    public NoteDaoInMemoryImpl(DVDDao dao) {
+    public NoteDaoInMemoryImpl(DvdDao dao) {
         this.dvdDao = dao;
 
     }
 
     @Override
-    public Note create(Note note) {
+    public Note insert(Note note) {
 
         note.setNoteId(nextId);
 
@@ -34,7 +31,7 @@ public class NoteDaoInMemoryImpl implements NoteDao {
     }
 
     @Override
-    public Note read(long id) {
+    public Note retrieve(long id) {
 
         for (Note n : noteLibrary) {
             if (n.getNoteId() == id) {
@@ -71,9 +68,9 @@ public class NoteDaoInMemoryImpl implements NoteDao {
     }
 
     @Override
-    public List<Note> findByDVD(DVD dvd) {
+    public List<Note> findByDvd(Dvd dvd) {
 
-        List<Note> dvdNotes = new ArrayList();
+        List<Note> dvdNotes = new ArrayList<>();
 
         for (Note n : noteLibrary) {
             if (n.getDvd().getDvdId() == dvd.getDvdId()) {
@@ -84,15 +81,12 @@ public class NoteDaoInMemoryImpl implements NoteDao {
         return dvdNotes;
 
     }
-    
+
     @Override
     public double getAverageNumberOfNotes() {
 
-        List<DVD> tempDVDList = dvdDao.list();
-
-        double average = ((double) noteLibrary.size()) / ((double) tempDVDList.size());
-
-        return average;
+        List<Dvd> tempDvdList = dvdDao.all();
+        return ((double) noteLibrary.size()) / ((double) tempDvdList.size());
 
     }
 

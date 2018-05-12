@@ -4,144 +4,21 @@ $(document).ready(function () {
     $("#addDVDButton").on("click", function (e) {
 
         e.preventDefault();
-        
+
         clearAddDVDErrorMessages();
         var addDVDFormIsValid = checkRequiredFieldValidation("addDVDForm");
-        
+
         if (addDVDFormIsValid) {
             makeAjaxCallToCreateDvd();
         }
     });
-    
-    /* Read a DVD */
-    $("#showDVDModal").on("shown.bs.modal", function (e) {
-        
-        var link = $(e.relatedTarget);
-        var dvdId = link.data("dvd-id");
-        
-        $.ajax({
-           url: contextRoot + "/DVD/" + dvdId ,
-           type: "GET" ,
-           dataType: "json" ,
-           beforeSend: function(xhr) {
-               xhr.setRequestHeader("Content-Type", "application/json");
-           },
-           success: function(dvd) {
-               
-               $("#showDVDModalHeader").text(dvd.dvd.title);
-               
-               $("#showTitle").text(dvd.dvd.title);
-               $("#showReleaseDate").text(dvd.dvd.releaseDate);
-               $("#showMpaaRating").text(dvd.dvd.mpaaRating);
-               $("#showDirector").text(dvd.dvd.director);
-               $("#showStudio").text(dvd.dvd.studio);
-               $("#showUserRating").text(dvd.dvd.userRating);
-               
-               for (var i = 0; i < dvd.dvdNoteList.length; i++) {
-                   var tableRow = buildShowNoteRow(dvd.dvdNoteList[i].noteText);
-                   $("#showNoteTable").append( $(tableRow) );
-               }
-               
-           },
-           error: function() {
-               console.log("DVD not found");
-           }
-        });
-    });
-    
-    // Edit a DVD
-    $("#editDVDModal").on("shown.bs.modal", function (e) {
 
-        var link = $(e.relatedTarget);
-        var dvdId = link.data("dvd-id");
-        
-        $.ajax({
-           url: contextRoot +  "/DVD/" + dvdId,
-           type: "GET",
-           dataType: "json",
-           beforeSend: function(xhr) {
-               xhr.setRequestHeader("Accept", "application/json");
-           },
-           success: function(dvd) {
-
-               $("#editDVDModalHeader").text(dvd.dvd.title);
-
-               $("#editId").val(dvd.dvd.dvdId);
-               $("#editTitle").val(dvd.dvd.title);
-               $("#editReleaseDate").val(dvd.dvd.releaseDate);
-               $("#editMpaaRating").val(dvd.dvd.mpaaRating);
-               $("#editDirector").val(dvd.dvd.director);
-               $("#editStudio").val(dvd.dvd.studio);
-               $("#editUserRating").val(dvd.dvd.userRating);
-               
-               for (var i = 0; i < dvd.dvdNoteList.length; i++) {
-                   var tableRow = buildEditNoteRow(dvd.dvdNoteList[i].noteText, dvd.dvdNoteList[i].noteId);
-                   $("#editNoteTable").append( $(tableRow) );
-               }
-               
-           },
-           error: function() {
-               console.log("Error reading DVD");
-           }
-        });
-    });
-    
-    // Functionality - Edit Submit Button
-    $("#editDVDButton").on("click", function(e) {
-        
-        e.preventDefault();
-        
-        var dvd = {
-            dvdId: $("#editId").val() ,
-            title: $("#editTitle").val() ,
-            releaseDate: $("#editReleaseDate").val() ,
-            mpaaRating: $("#editMpaaRating").val() ,
-            director: $("#editDirector").val() ,
-            studio: $("#editStudio").val() ,
-            userRating: $("#editUserRating").val()
-        };
-        
-        var dvdData = JSON.stringify(dvd);
-        
-        $.ajax({
-           url: contextRoot + "/DVD/" + dvd.dvdId ,
-           type: "PUT" ,
-           data: dvdData ,
-           dataType: "json" ,
-           beforeSend: function(xhr) {
-               xhr.setRequestHeader("Accept", "application/json");
-               xhr.setRequestHeader("Content-Type", "application/json");
-           },
-           success: function(dvd) {
-
-               clearEditDVDErrorMessages();
-               
-               var tableRow = buildDVDRow(dvd);
-               $("#dvd-row-" + dvd.dvdId).replaceWith( $(tableRow) );
-
-               $("#editDVDModal").modal("hide");
-
-           },
-           error: function(data) {
-
-               clearEditDVDErrorMessages();
-
-               var errors = data.responseJSON.errorList;
-
-               $.each(errors, function(index, error) {
-                   $("#edit-" + error.fieldName + "-validation-error").append(error.message);
-               });
-           }
-        });
-        
-    });
-    
     // Delete DVD
     $("#deleteDVDModal").on("shown.bs.modal", function(e) {
-        
+
         var link = $(e.relatedTarget);
         var dvdId = link.data("dvd-id");
-        
+
         $.ajax({
             url: contextRoot + "/DVD/" + dvdId,
             type: "GET",
@@ -160,9 +37,9 @@ $(document).ready(function () {
                 $("#deleteDirector").text(data.dvd.director);
                 $("#deleteStudio").text(data.dvd.studio);
                 $("#deleteUserRating").text(data.dvd.userRating);
-                
+
                 $("#deleteUserNotes").val(data.userNotes);
-                
+
                 for (var i = 0; i < data.dvdNoteList.length; i++) {
                    var tableRow = buildShowNoteRow(data.dvdNoteList[i].noteText);
                    $("#deleteNoteTable").append( $(tableRow) );
@@ -173,12 +50,12 @@ $(document).ready(function () {
             }
         });
     });
-    
+
     // Functionality - Delete DVD Button
     $("#deleteDVDButton").on("click", function(e) {
-        
+
         e.preventDefault();
-        
+
         var dvd = {
             dvdId: $("#deleteId").val() ,
             title: $("#deleteTitle").val() ,
@@ -187,12 +64,12 @@ $(document).ready(function () {
             director: $("#deleteDirector").val() ,
             studio: $("#deleteStudio").val() ,
             userRating: $("#deleteUserRating").val() ,
-            
+
             userNotes: $("#deleteUserNotes").val()
         };
-        
+
         var dvdData = JSON.stringify(dvd);
-        
+
         $.ajax({
             url: contextRoot + "/DVD/" + dvd.dvdId ,
             type: "DELETE" ,
@@ -209,193 +86,18 @@ $(document).ready(function () {
                 console.log("DVD not found");
             }
         });
-        
+
     });
-    
-    // Create a Note
-    $("#createNoteButton").on("click", function(e) {
-        
-        e.preventDefault();
-        
-        var dvd = {
-          dvdId: $("#editId").val()
-        };
-        
-        var note = {
-            noteText: $("#createNoteText").val(),
-            dvd: dvd
-        };
-        
-        var noteData = JSON.stringify(note);
-        
-        $.ajax({
-           url: contextRoot + "/Note/",
-           type: "POST",
-           data: noteData,
-           dataType: "json",
-           beforeSend: function(xhr) {
-               xhr.setRequestHeader("Accept", "application/json");
-               xhr.setRequestHeader("Content-Type", "application/json");
-           },
-           success: function(note) {
 
-               clearAddNoteErrorMessages();
 
-               var tableRow = buildEditNoteRow(note.noteText, note.noteId);
-               
-               $("#editNoteTable").append( $(tableRow) );
 
-               $("#createNoteModal").modal("toggle");
-               
-           },
-           error: function(data, status) {
 
-               clearAddNoteErrorMessages();
 
-               var errors = data.responseJSON.errorList;
-               $.each(errors, function(index, error) {
-                   $("#add-" + error.fieldName + "-validation-error").append(error.message);
-               });
 
-           }
-        });
-        
-    });
-    
-    // Edit Note
-    $("#editNoteModal").on("shown.bs.modal", function(e) {
-        
-        var link = $(e.relatedTarget);
-        var noteId = link.data("note-id");
-        
-        $.ajax({
-           url: contextRoot +  "/Note/" + noteId ,
-           type: "GET" ,
-           dataType: "json" ,
-           beforeSend: function(xhr) {
-               xhr.setRequestHeader("Accept", "application/json");
-           },
-           success: function(data, status) {
-               
-               $("#editNoteId").val(data.noteId);
-               $("#editNoteText").val(data.noteText);
-               $("#editNoteDvdId").val(data.dvd.dvdId);
-               
-           },
-           error: function(data, status) {
-               console.log("Error reading Note");
-           }
-        });
-        
-    });
-    
-    // Functionality - Edit Note "Submit Changes" Button
-    $("#editNoteButton").on("click", function(e) {
-        
-        e.preventDefault();
-        
-        var dvd = {
-            dvdId: $("#editNoteDvdId").val()
-        };
-        
-        var note = {
-            noteId: $("#editNoteId").val() ,
-            noteText: $("#editNoteText").val() ,
-            dvd: dvd
-        };
-        
-        var noteData = JSON.stringify(note);
-        
-        $.ajax({
-           url: contextRoot + "/Note/" + note.noteId ,
-           type: "PUT" ,
-           data: noteData ,
-           dataType: "json" ,
-           beforeSend: function(xhr) {
-               xhr.setRequestHeader("Accept", "application/json");
-               xhr.setRequestHeader("Content-Type", "application/json");
-           },
-           success: function(data, status) { // A Note object is the response (data)
 
-               clearEditNoteErrorMessages();
-               
-               var tableRow = buildEditNoteRow(data.noteText, data.noteId);
-               
-               $("#note-row-" + data.noteId).replaceWith( $(tableRow) );
 
-               $("#editNoteModal").modal("hide");
 
-           },
-           error: function(data, status) {
 
-               clearEditNoteErrorMessages();
-
-               var errors = data.responseJSON.errorList;
-
-               $.each(errors, function(index, error) {
-
-                   if(error.fieldName == "noteText") {
-                       $("#edit-noteText-validation-error").append(error.message);
-                   }
-
-               });
-
-           }
-        });
-        
-    });
-    
-    // Delete Note
-    $("#deleteNoteModal").on("shown.bs.modal", function(e) {
-        
-        link = $(e.relatedTarget);
-        noteId = link.data("note-id");
-        
-        $.ajax({
-           url: contextRoot + "/Note/" +  noteId ,
-           type: "GET" ,
-           dataType: "json" ,
-           beforeSend: function(xhr) {
-               xhr.setRequestHeader("Accept", "application/json");
-           },
-           success: function(data, status) {
-               $("#deleteNoteId").val(data.noteId);
-               $("#deleteNoteText").text(data.noteText);
-           },
-           error: function(data, status) {
-               console.log("Error with something");
-           }
-        });
-        
-    });
-    
-    // Functionality - Delete Note Button
-    $("#deleteNoteButton").on("click", function(e) {
-        
-        var note = {
-            noteId: $("#deleteNoteId").val()
-        };
-        
-        var noteData = JSON.stringify(note);
-        
-        $.ajax({
-            url: contextRoot + "/Note/" + noteId ,
-            type: "DELETE" ,
-            data: noteData ,
-            dataType: "json" ,
-            beforeSend: function(xhr) {
-                xhr.setRequestHeader("Accept", "application/json");
-                xhr.setRequestHeader("Content-Type", "application/json");
-            },
-            success: function(data, status) {
-                $("#note-row-" + data.noteId).remove();
-            },
-            error: function(data, status) {
-                console.log("Error in the Delete Note Button method");
-            }
-        });
-        
-    });
 
     $(".addDVDFormElements").on("input", function() {
         checkRequiredFieldValidation();
@@ -515,110 +217,94 @@ $(document).ready(function () {
 
     });
 
-    function buildDVDRow(data) {
+});
 
-        var date = new Date(data.releaseDate);
-        var releaseYear = date.getFullYear();
+function buildShowNoteRow(text) {
 
-        return "\
-                <tr id=\"dvd-row-" + data.dvdId + "\"> \n\
-                    <td><a data-dvd-id=" + data.dvdId + " data-toggle=\"modal\" data-target=\"#showDVDModal\" data-backdrop=\"false\">" + data.title + "</a></td> \n\
-                    <td>" + releaseYear + "</td> \n\
-                    <td>" + data.mpaaRating + "</td> \n\
-                    <td><a data-dvd-id=" + data.dvdId + " data-toggle=\"modal\" data-target=\"#editDVDModal\" data-backdrop=\"false\">Edit</a></td> \n\
-                    <td><a data-dvd-id=" + data.dvdId + " data-toggle=\"modal\" data-target=\"#deleteDVDModal\" data-backdrop=\"false\">Delete</a></td> \n\
-                </tr>";
-
-    }
-
-    function buildShowNoteRow(text) {
-
-        return "\
+    return "\
                 <tr class=\"noteRows\"> \n\
                     <td>" + text + "</td> \n\
                 </tr>";
 
-    }
+}
 
-    function buildEditNoteRow(text, noteId) {
+function buildEditNoteRow(text, noteId) {
 
-        return "\
+    return "\
                 <tr id=\"note-row-\"" + noteId + " class=\"noteRows\"> \n\
                     <td>" + text + "</td> \n\
                     <td><a data-note-id=" + noteId + " data-toggle=\"modal\" data-target=\"#editNoteModal\" data-backdrop=\"false\">Edit</a></td>\n\
                     <td><a data-note-id=" + noteId + " data-toggle=\"modal\" data-target=\"#deleteNoteModal\" data-backdrop=\"false\">Delete</a></td>\n\
                 </tr>";
 
-    }
+}
 
-    function clearEditDVDErrorMessages() {
+function clearEditDVDErrorMessages() {
 
-        $("#edit-title-validation-error").text("");
-        $("#edit-releaseDate-validation-error").text("");
-        $("#edit-mpaaRating-validation-error").text("");
-        $("#edit-director-validation-error").text("");
-        $("#edit-studio-validation-error").text("");
-        $("#edit-userRating-validation-error").text("");
+    $("#edit-title-validation-error").text("");
+    $("#edit-releaseDate-validation-error").text("");
+    $("#edit-mpaaRating-validation-error").text("");
+    $("#edit-director-validation-error").text("");
+    $("#edit-studio-validation-error").text("");
+    $("#edit-userRating-validation-error").text("");
 
-    }
+}
 
-    function clearAddDVDErrorMessages() {
+function clearAddDVDErrorMessages() {
 
-        $("#add-title-validation-error").text("");
-        $("#add-releaseDate-validation-error").text("");
-        $("#add-mpaaRating-validation-error").text("");
-        $("#add-director-validation-error").text("");
-        $("#add-studio-validation-error").text("");
-        $("#add-userRating-validation-error").text("");
+    $("#add-title-validation-error").text("");
+    $("#add-releaseDate-validation-error").text("");
+    $("#add-mpaaRating-validation-error").text("");
+    $("#add-director-validation-error").text("");
+    $("#add-studio-validation-error").text("");
+    $("#add-userRating-validation-error").text("");
 
-        $("#add-title").removeClass("validationError");
-        $("#add-releaseDate").removeClass("validationError");
-        $("#add-mpaaRating").removeClass("validationError");
-        $("#add-director").removeClass("validationError");
-        $("#add-studio").removeClass("validationError");
-        $("#add-userRating").removeClass("validationError");
+    $("#add-title").removeClass("validationError");
+    $("#add-releaseDate").removeClass("validationError");
+    $("#add-mpaaRating").removeClass("validationError");
+    $("#add-director").removeClass("validationError");
+    $("#add-studio").removeClass("validationError");
+    $("#add-userRating").removeClass("validationError");
 
-    }
+}
 
-    function clearAddNoteErrorMessages() {
-        $("#add-noteText-validation-error").text("");
-    }
+function clearAddNoteErrorMessages() {
+    $("#add-noteText-validation-error").text("");
+}
 
-    function clearEditNoteErrorMessages() {
-        $("#edit-noteText-validation-error").text("");
-    }
+function clearEditNoteErrorMessages() {
+    $("#edit-noteText-validation-error").text("");
+}
 
 // Summary: Checks if fields marked as required have data in them
 // Parameter: The CSS id of the form to be checked
 // Returns: True/False whether the form is valid or not
-    function checkRequiredFieldValidation(formId) {
+function checkRequiredFieldValidation(formId) {
 
-        var elementsInDVDForm = $("#" + formId).prop("elements"); // List all elements in the form
-        var formIsValid = true; // variable to track if form is valid
+    var elementsInDVDForm = $("#" + formId).prop("elements"); // List all elements in the form
+    var formIsValid = true; // variable to track if form is valid
 
-        for (var i = 0; i < elementsInDVDForm.length; i++) {
+    for (var i = 0; i < elementsInDVDForm.length; i++) {
 
-            var ajaxElementId = "#" + elementsInDVDForm[i].id;
-            var isRequiredField = $(ajaxElementId).hasClass("required");
+        var ajaxElementId = "#" + elementsInDVDForm[i].id;
+        var isRequiredField = $(ajaxElementId).hasClass("required");
 
-            if (isRequiredField) {
+        if (isRequiredField) {
 
-                var fieldIsValid = $(ajaxElementId).val() != "" && $(ajaxElementId).val() != null;
+            var fieldIsValid = $(ajaxElementId).val() != "" && $(ajaxElementId).val() != null;
 
-                if (fieldIsValid) {
-                    $(ajaxElementId).removeClass("validationError");
-                } else {
-                    $(ajaxElementId).addClass("validationError");
-                    // TODO display clientside error message divs
-                    formIsValid = false;
-                }
-
+            if (fieldIsValid) {
+                $(ajaxElementId).removeClass("validationError");
+            } else {
+                $(ajaxElementId).addClass("validationError");
+                // TODO display clientside error message divs
+                formIsValid = false;
             }
 
         }
 
-        return formIsValid;
-
     }
 
-});
+    return formIsValid;
+
+}

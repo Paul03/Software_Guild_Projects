@@ -1,12 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: paulharding
-  Date: 9/15/16
-  Time: 8:52 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 
     <head>
@@ -27,7 +21,6 @@
 
         <div class="container">
 
-            <jsp:include page="header.jsp"/>
             <jsp:include page="navbar.jsp"/>
 
             <h2>Delete DVD</h2>

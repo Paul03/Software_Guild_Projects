@@ -1,7 +1,7 @@
 package com.thesoftwareguild.dvdlibraryweb.dao;
 
-import com.thesoftwareguild.dvdlibraryweb.dto.DVD;
-import com.thesoftwareguild.dvdlibraryweb.utility.DVDUtility;
+import com.thesoftwareguild.dvdlibraryweb.dto.Dvd;
+import com.thesoftwareguild.dvdlibraryweb.utility.DateUtility;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -10,20 +10,20 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.*;
 
-public class DVDDaoImpl implements DVDDao {
+public class DvdDaoImpl implements DvdDao {
 
     private static final String FILENAME = "dvds.txt";
     private static final String TOKEN = "::";
 
     private int currentYear = Calendar.getInstance().get(Calendar.YEAR);
-    private List<DVD> dvdLibrary = null;
+    private List<Dvd> dvdLibrary = null;
     private long nextId = 1;
 
-    public DVDDaoImpl() {
+    public DvdDaoImpl() {
 
         dvdLibrary = decode();
 
-        for (DVD dvd : dvdLibrary) {
+        for (Dvd dvd : dvdLibrary) {
             if (dvd.getDvdId() >= nextId) {
                 nextId = dvd.getDvdId() + 1;
             }
@@ -32,7 +32,7 @@ public class DVDDaoImpl implements DVDDao {
     }
 
     @Override
-    public DVD create(DVD dvd) {
+    public Dvd insert(Dvd dvd) {
 
         dvd.setDvdId(nextId);
         dvdLibrary.add(dvd);
@@ -40,15 +40,15 @@ public class DVDDaoImpl implements DVDDao {
         nextId++;
         encode();
 
-        return new DVD(dvd);
+        return new Dvd(dvd);
     }
 
     @Override
-    public DVD read(long id) {
+    public Dvd retrieve(long id) {
 
-        for (DVD d : dvdLibrary) {
+        for (Dvd d : dvdLibrary) {
             if (d.getDvdId() == id) {
-                return new DVD(d);
+                return new Dvd(d);
             }
         }
 
@@ -56,7 +56,7 @@ public class DVDDaoImpl implements DVDDao {
     }
 
     @Override
-    public void update(DVD dvd) {
+    public void update(Dvd dvd) {
 
         for (int i = 0; i < dvdLibrary.size(); i++) {
             if (dvdLibrary.get(i).getDvdId() == dvd.getDvdId()) {
@@ -69,9 +69,9 @@ public class DVDDaoImpl implements DVDDao {
     }
 
     @Override
-    public void delete(DVD dvd) {
+    public void delete(Dvd dvd) {
 
-        for (DVD d : dvdLibrary) {
+        for (Dvd d : dvdLibrary) {
             if (d.getDvdId() == dvd.getDvdId()) {
                 dvdLibrary.remove(d);
                 break;
@@ -82,7 +82,7 @@ public class DVDDaoImpl implements DVDDao {
     }
 
     @Override
-    public List<DVD> list() {
+    public List<Dvd> all() {
 
         return new ArrayList<>(dvdLibrary);
 
@@ -96,7 +96,7 @@ public class DVDDaoImpl implements DVDDao {
 
             out = new PrintWriter(new FileWriter(FILENAME));
 
-            for (DVD d : dvdLibrary) {
+            for (Dvd d : dvdLibrary) {
 
                 out.print(d.getDvdId());
                 out.print(TOKEN);
@@ -104,7 +104,7 @@ public class DVDDaoImpl implements DVDDao {
                 out.print(d.getTitle());
                 out.print(TOKEN);
 
-                String releaseDate = DVDUtility.formatDateForEncode(d.getReleaseDate());
+                String releaseDate = DateUtility.formatDateForEncode(d.getReleaseDate());
                 out.print(releaseDate);
                 out.print(TOKEN);
 
@@ -132,9 +132,9 @@ public class DVDDaoImpl implements DVDDao {
 
     }
 
-    private List<DVD> decode() {
+    private List<Dvd> decode() {
 
-        List<DVD> tempDVDList = new ArrayList<>();
+        List<Dvd> tempDvdList = new ArrayList<>();
 
         try {
 
@@ -146,7 +146,7 @@ public class DVDDaoImpl implements DVDDao {
 
                 String[] stringParts = currentLine.split(TOKEN);
 
-                DVD myDVD = new DVD();
+                Dvd myDvd = new Dvd();
 
                 int dvdId = Integer.parseInt(stringParts[0]);
 
@@ -170,7 +170,7 @@ public class DVDDaoImpl implements DVDDao {
                 } else {
                     yearString = "YYYY";
                 }
-                
+
                 Date dvdReleaseDate = new Date();
 
                 Integer month;
@@ -211,15 +211,15 @@ public class DVDDaoImpl implements DVDDao {
 
                 }
 
-                myDVD.setDvdId(dvdId);
-                myDVD.setTitle(stringParts[1]);
-                myDVD.setReleaseDate(dvdReleaseDate);
-                myDVD.setMpaaRating(stringParts[3]);
-                myDVD.setDirector(stringParts[4]);
-                myDVD.setStudio(stringParts[5]);
-                myDVD.setUserRating(dvdUserRating);
+                myDvd.setDvdId(dvdId);
+                myDvd.setTitle(stringParts[1]);
+                myDvd.setReleaseDate(dvdReleaseDate);
+                myDvd.setMpaaRating(stringParts[3]);
+                myDvd.setDirector(stringParts[4]);
+                myDvd.setStudio(stringParts[5]);
+                myDvd.setUserRating(dvdUserRating);
 
-                tempDVDList.add(myDVD);
+                tempDvdList.add(myDvd);
 
             }
 
@@ -227,20 +227,20 @@ public class DVDDaoImpl implements DVDDao {
 
         }
 
-        return tempDVDList;
+        return tempDvdList;
 
     }
 
     @Override
-    public List<DVD> searchLastNYears(int years) {
+    public List<Dvd> searchLastNYears(int years) {
 
         Integer targetYear = currentYear - years;
 
-        List<DVD> result = new ArrayList<>();
+        List<Dvd> result = new ArrayList<>();
 
         try {
 
-            for (DVD d : dvdLibrary) {
+            for (Dvd d : dvdLibrary) {
                 if (d.getReleaseDate().getYear() >= targetYear) {
                     result.add(d);
                 }
@@ -255,13 +255,13 @@ public class DVDDaoImpl implements DVDDao {
     }
 
     @Override
-    public List<DVD> searchByMPAARating(String rating) {
+    public List<Dvd> searchByMPAARating(String rating) {
 
-        List<DVD> result = new ArrayList<>();
+        List<Dvd> result = new ArrayList<>();
 
         try {
 
-            for (DVD d : dvdLibrary) {
+            for (Dvd d : dvdLibrary) {
                 if (d.getMpaaRating().equals(rating)) {
                     result.add(d);
                 }
@@ -279,13 +279,13 @@ public class DVDDaoImpl implements DVDDao {
     }
 
     @Override
-    public List<DVD> searchByDirector(String directorName) {
+    public List<Dvd> searchByDirector(String directorName) {
 
-        List<DVD> result = new ArrayList<>();
+        List<Dvd> result = new ArrayList<>();
 
         try {
 
-            for (DVD d : dvdLibrary) {
+            for (Dvd d : dvdLibrary) {
                 if (d.getDirector().toLowerCase().equals(directorName.toLowerCase())) {
                     result.add(d);
                 }
@@ -296,20 +296,20 @@ public class DVDDaoImpl implements DVDDao {
         }
 
         result.stream()
-                .sorted(DVD::compareTo)
+                .sorted(Dvd::compareTo)
                 .close();
 
         return result;
     }
 
     @Override
-    public List<DVD> searchByStudio(String studioName) {
+    public List<Dvd> searchByStudio(String studioName) {
 
-        List<DVD> result = new ArrayList<>();
+        List<Dvd> result = new ArrayList<>();
 
         try {
 
-            for (DVD d : dvdLibrary) {
+            for (Dvd d : dvdLibrary) {
                 if (d.getStudio().toLowerCase().equals(studioName.toLowerCase())) {
                     result.add(d);
                 }
@@ -320,7 +320,7 @@ public class DVDDaoImpl implements DVDDao {
         }
 
         result.stream()
-                .sorted(DVD::compareTo)
+                .sorted(Dvd::compareTo)
                 .close();
 
         return result;
@@ -334,7 +334,7 @@ public class DVDDaoImpl implements DVDDao {
         Double totalAge = 0.0;
         Double movieCount = 0.0;
 
-        for (DVD d : dvdLibrary) {
+        for (Dvd d : dvdLibrary) {
             try {
 
                 double age = currentYear - d.getReleaseDate().getYear();
@@ -353,13 +353,13 @@ public class DVDDaoImpl implements DVDDao {
     }
 
     @Override
-    public List<DVD> findNewestDVD() {
+    public List<Dvd> findNewestDVD() {
 
-        List<DVD> result = new ArrayList();
+        List<Dvd> result = new ArrayList();
         Integer newestYear = 0;
 
         // Determine what the newestYear is
-        for (DVD d : dvdLibrary) {
+        for (Dvd d : dvdLibrary) {
             try {
 
                 if (d.getReleaseDate().getYear() > newestYear) {
@@ -371,8 +371,8 @@ public class DVDDaoImpl implements DVDDao {
 
         }
 
-        // Get a list of all the DVDs from newestYear
-        for (DVD d : dvdLibrary) {
+        // Get a all of all the DVDs from newestYear
+        for (Dvd d : dvdLibrary) {
             if (Objects.equals(d.getReleaseDate().getYear(), newestYear)) {
                 result.add(d);
             }
@@ -385,13 +385,13 @@ public class DVDDaoImpl implements DVDDao {
     }
 
     @Override
-    public List<DVD> findOldestDVD() {
+    public List<Dvd> findOldestDVD() {
 
-        List<DVD> result = new ArrayList();
+        List<Dvd> result = new ArrayList();
         Integer oldestYear = 9999999;
 
         // Determine what the oldestYear is
-        for (DVD d : dvdLibrary) {
+        for (Dvd d : dvdLibrary) {
 
             try {
                 if (d.getReleaseDate().getYear() < oldestYear) {
@@ -402,8 +402,8 @@ public class DVDDaoImpl implements DVDDao {
             }
         }
 
-        // Populate the result list with DVD objects from the oldestYear
-        for (DVD d : dvdLibrary) {
+        // Populate the result all with Dvd objects from the oldestYear
+        for (Dvd d : dvdLibrary) {
             if (Objects.equals(d.getReleaseDate().getYear(), oldestYear)) {
                 result.add(d);
             }
@@ -416,13 +416,13 @@ public class DVDDaoImpl implements DVDDao {
     }
 
     @Override
-    public List<DVD> searchByTitle(String title) {
+    public List<Dvd> searchByTitle(String title) {
 
-        List<DVD> result = new ArrayList<>();
+        List<Dvd> result = new ArrayList<>();
 
         try {
 
-            for (DVD d : dvdLibrary) {
+            for (Dvd d : dvdLibrary) {
                 if (d.getTitle().toLowerCase().equals(title.toLowerCase())) {
                     result.add(d);
                 }

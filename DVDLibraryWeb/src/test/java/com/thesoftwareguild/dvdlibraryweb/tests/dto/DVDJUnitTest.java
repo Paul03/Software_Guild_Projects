@@ -5,15 +5,14 @@
  */
 package com.thesoftwareguild.dvdlibraryweb.tests.dto;
 
-import com.thesoftwareguild.dvdlibraryweb.dto.DVD;
+import com.thesoftwareguild.dvdlibraryweb.dto.Dvd;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+
 import junit.framework.Assert;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -35,18 +34,18 @@ public class DVDJUnitTest {
     @Test
     public void testCompare1() {
 
-        DVD lasseterTest = new DVD();
+        Dvd lasseterTest = new Dvd();
         lasseterTest.setMpaaRating("R");
 
-        DVD toyStory = new DVD();
+        Dvd toyStory = new Dvd();
         toyStory.setMpaaRating("G");
 
-        List<DVD> testList = new ArrayList();
+        List<Dvd> testList = new ArrayList();
         testList.add(lasseterTest);
         testList.add(toyStory);
 
         testList.stream()
-                .sorted(DVD::compareTo)
+                .sorted(Dvd::compareTo)
                 .close();
         Assert.assertEquals("G", testList.get(0).getMpaaRating());
         Assert.assertEquals("R", testList.get(1).getMpaaRating());
@@ -56,18 +55,18 @@ public class DVDJUnitTest {
     @Test
     public void testCompare2() {
 
-        DVD toyStory = new DVD();
+        Dvd toyStory = new Dvd();
         toyStory.setMpaaRating("G");
 
-        DVD lasseterTest = new DVD();
+        Dvd lasseterTest = new Dvd();
         lasseterTest.setMpaaRating("R");
 
-        List<DVD> testList = new ArrayList();
+        List<Dvd> testList = new ArrayList();
         testList.add(toyStory);
         testList.add(lasseterTest);
 
         testList.stream()
-                .sorted(DVD::compareTo)
+                .sorted(Dvd::compareTo)
                 .close();
         Assert.assertEquals("G", testList.get(0).getMpaaRating());
         Assert.assertEquals("R", testList.get(1).getMpaaRating());
@@ -77,18 +76,18 @@ public class DVDJUnitTest {
     @Test
     public void testCompare3() {
 
-        DVD verbinskiTest = new DVD();
+        Dvd verbinskiTest = new Dvd();
         verbinskiTest.setMpaaRating("R");
 
-        DVD pirates = new DVD();
+        Dvd pirates = new Dvd();
         pirates.setMpaaRating("PG-13");
 
-        List<DVD> testList = new ArrayList();
+        List<Dvd> testList = new ArrayList();
         testList.add(verbinskiTest);
         testList.add(pirates);
 
         testList.stream()
-                .sorted(DVD::compareTo)
+                .sorted(Dvd::compareTo)
                 .close();
         Assert.assertEquals("PG-13", testList.get(0).getMpaaRating());
         Assert.assertEquals("R", testList.get(1).getMpaaRating());
@@ -98,18 +97,18 @@ public class DVDJUnitTest {
     @Test
     public void testCompare4() {
 
-        DVD pirates = new DVD();
+        Dvd pirates = new Dvd();
         pirates.setMpaaRating("PG-13");
 
-        DVD verbinskiTest = new DVD();
+        Dvd verbinskiTest = new Dvd();
         verbinskiTest.setMpaaRating("R");
 
-        List<DVD> testList = new ArrayList();
+        List<Dvd> testList = new ArrayList();
         testList.add(pirates);
         testList.add(verbinskiTest);
 
         testList.stream()
-                .sorted(DVD::compareTo)
+                .sorted(Dvd::compareTo)
                 .close();
         Assert.assertEquals("PG-13", testList.get(0).getMpaaRating());
         Assert.assertEquals("R", testList.get(1).getMpaaRating());
