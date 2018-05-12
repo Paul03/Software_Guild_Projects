@@ -33,7 +33,7 @@ public class NoteController {
     }
 
     @RequestMapping(value="add/{dvdId}", method=RequestMethod.GET)
-    public String addNote(@PathVariable("dvdId") Integer dvdId, Map model) {
+    public String addNote(@PathVariable("dvdId") Integer dvdId, Map<String, Object> model) {
 
         Dvd dvd = dvdDao.retrieve(dvdId);
         model.put("dvd", dvd);
@@ -51,7 +51,7 @@ public class NoteController {
     }
 
     @RequestMapping(value="edit/{id}", method=RequestMethod.GET)
-    public String edit(@PathVariable("id") Integer noteId, Map model) {
+    public String edit(@PathVariable("id") Integer noteId, Map<String, Object> model) {
 
         Note note = noteDao.retrieve(noteId);
         model.put("note", note);
@@ -70,7 +70,7 @@ public class NoteController {
     }
 
     @RequestMapping(value="delete/{id}", method=RequestMethod.GET)
-    public String delete(@PathVariable("id") Integer id, Map model) {
+    public String delete(@PathVariable("id") Integer id, Map<String, Object> model) {
 
         Note note = noteDao.retrieve(id);
         model.put("note", note);

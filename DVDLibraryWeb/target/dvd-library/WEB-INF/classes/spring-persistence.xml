@@ -21,7 +21,7 @@
         <property name="dataSource" ref="dataSource" />
     </bean>
 
-    <bean id="dvdDao" class="com.thesoftwareguild.dvdlibraryweb.dao.DVDDaoDbImpl">
+    <bean id="dvdDao" class="com.thesoftwareguild.dvdlibraryweb.dao.DvdDaoDbImpl">
         <constructor-arg ref="jdbcTemplate" />
     </bean>
 
@@ -30,8 +30,12 @@
         <constructor-arg ref="jdbcTemplate" />
     </bean>
 
-    <bean id="viewSelector" class="com.thesoftwareguild.dvdlibraryweb.ui.JqueryJspViewSelector">
+    <!--View Selectors-->
 
+    <!--Jquery/JSP implementation of view-->
+    <bean id="viewSelector" class="com.thesoftwareguild.dvdlibraryweb.ui.JqueryJspViewSelector">
     </bean>
+
+    <!--End View Selectors-->
 
 </beans>
