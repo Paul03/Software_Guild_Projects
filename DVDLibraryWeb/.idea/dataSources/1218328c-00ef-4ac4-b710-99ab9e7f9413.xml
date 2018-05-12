@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="DVDLibrary@localhost">
-  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.7">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.8">
     <root id="1">
       <DefaultCasing>mixed/mixed</DefaultCasing>
     </root>
@@ -962,50 +962,50 @@
     </table>
     <column id="246" parent="244" name="id">
       <Position>1</Position>
-      <DataType>bigint(20)|0</DataType>
+      <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="247" parent="244" name="title">
       <Position>2</Position>
-      <DataType>varchar(200)|0</DataType>
+      <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="248" parent="244" name="release_date">
       <Position>3</Position>
-      <DataType>date|0</DataType>
+      <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="249" parent="244" name="mpaa_rating">
       <Position>4</Position>
-      <DataType>varchar(45)|0</DataType>
+      <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="250" parent="244" name="director">
       <Position>5</Position>
-      <DataType>varchar(150)|0</DataType>
+      <DataType>varchar(150)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="251" parent="244" name="studio">
       <Position>6</Position>
-      <DataType>varchar(100)|0</DataType>
+      <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="252" parent="244" name="user_rating">
       <Position>7</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="253" parent="244" name="entered_date">
       <Position>8</Position>
-      <DataType>datetime|0</DataType>
+      <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <key id="254" parent="244" name="PRIMARY">
@@ -1015,20 +1015,20 @@
     </key>
     <column id="255" parent="245" name="id">
       <Position>1</Position>
-      <DataType>bigint(20)|0</DataType>
+      <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="256" parent="245" name="note_text">
       <Position>2</Position>
-      <DataType>varchar(500)|0</DataType>
+      <DataType>varchar(500)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="257" parent="245" name="dvd_id">
       <Position>3</Position>
-      <DataType>bigint(20)|0</DataType>
+      <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
