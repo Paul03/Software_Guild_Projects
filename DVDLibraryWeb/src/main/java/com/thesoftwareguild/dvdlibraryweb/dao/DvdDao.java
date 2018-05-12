@@ -6,15 +6,15 @@ import java.util.List;
 
 public interface DvdDao {
 
-    Dvd create(Dvd dvd);
+    Dvd insert(Dvd dvd);
 
-    Dvd read(long id);
+    Dvd retrieve(long id);
 
     void update(Dvd dvd);
 
     void delete(Dvd dvd);
 
-    List<Dvd> list();
+    List<Dvd> all();
 
     List<Dvd> searchLastNYears(int years);
 

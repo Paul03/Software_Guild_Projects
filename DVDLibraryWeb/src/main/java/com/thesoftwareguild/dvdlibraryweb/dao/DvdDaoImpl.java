@@ -32,7 +32,7 @@ public class DvdDaoImpl implements DvdDao {
     }
 
     @Override
-    public Dvd create(Dvd dvd) {
+    public Dvd insert(Dvd dvd) {
 
         dvd.setDvdId(nextId);
         dvdLibrary.add(dvd);
@@ -44,7 +44,7 @@ public class DvdDaoImpl implements DvdDao {
     }
 
     @Override
-    public Dvd read(long id) {
+    public Dvd retrieve(long id) {
 
         for (Dvd d : dvdLibrary) {
             if (d.getDvdId() == id) {
@@ -82,7 +82,7 @@ public class DvdDaoImpl implements DvdDao {
     }
 
     @Override
-    public List<Dvd> list() {
+    public List<Dvd> all() {
 
         return new ArrayList<>(dvdLibrary);
 
@@ -371,7 +371,7 @@ public class DvdDaoImpl implements DvdDao {
 
         }
 
-        // Get a list of all the DVDs from newestYear
+        // Get a all of all the DVDs from newestYear
         for (Dvd d : dvdLibrary) {
             if (Objects.equals(d.getReleaseDate().getYear(), newestYear)) {
                 result.add(d);
@@ -402,7 +402,7 @@ public class DvdDaoImpl implements DvdDao {
             }
         }
 
-        // Populate the result list with Dvd objects from the oldestYear
+        // Populate the result all with Dvd objects from the oldestYear
         for (Dvd d : dvdLibrary) {
             if (Objects.equals(d.getReleaseDate().getYear(), oldestYear)) {
                 result.add(d);

@@ -94,8 +94,8 @@ public class NoteDaoJUnitTest {
     @Test
     public void testCreate() {
 
-        Dvd addedDvd = dvdDao.create(miracle);
-        Note addedNote = noteDao.create(miracleNote1);
+        Dvd addedDvd = dvdDao.insert(miracle);
+        Note addedNote = noteDao.insert(miracleNote1);
 
         Assert.assertNotNull(addedNote);
         Assert.assertNotNull(addedNote.getNoteId());
@@ -108,10 +108,10 @@ public class NoteDaoJUnitTest {
     @Test
     public void testRead() {
 
-        Dvd addedDvd = dvdDao.create(miracle);
-        Note addedNote = noteDao.create(miracleNote2);
+        Dvd addedDvd = dvdDao.insert(miracle);
+        Note addedNote = noteDao.insert(miracleNote2);
 
-        Note readNote = noteDao.read(addedNote.getNoteId());
+        Note readNote = noteDao.retrieve(addedNote.getNoteId());
 
         Assert.assertNotNull(readNote);
         Assert.assertNotNull(readNote.getNoteId());
@@ -123,15 +123,15 @@ public class NoteDaoJUnitTest {
     @Test
     public void testUpdate() {
 
-        Dvd addedDvd = dvdDao.create(miracle);
-        Note addedNote = noteDao.create(miracleNote2);
+        Dvd addedDvd = dvdDao.insert(miracle);
+        Note addedNote = noteDao.insert(miracleNote2);
 
-        Note readNote = noteDao.read(addedNote.getNoteId());
+        Note readNote = noteDao.retrieve(addedNote.getNoteId());
 
         readNote.setNoteText("17");
         noteDao.update(readNote);
 
-        Note updatedNote = noteDao.read(readNote.getNoteId());
+        Note updatedNote = noteDao.retrieve(readNote.getNoteId());
 
         Assert.assertNotNull(updatedNote);
 
@@ -142,14 +142,14 @@ public class NoteDaoJUnitTest {
     @Test
     public void testDelete() {
 
-        Dvd addedDvd = dvdDao.create(miracle);
-        Note addedNote = noteDao.create(miracleNote2);
+        Dvd addedDvd = dvdDao.insert(miracle);
+        Note addedNote = noteDao.insert(miracleNote2);
 
-        Note readNote = noteDao.read(addedNote.getNoteId());
+        Note readNote = noteDao.retrieve(addedNote.getNoteId());
 
         noteDao.delete(readNote);
 
-        Note deletedNote = noteDao.read(readNote.getNoteId());
+        Note deletedNote = noteDao.retrieve(readNote.getNoteId());
 
         Assert.assertNull(deletedNote);
 
@@ -158,12 +158,12 @@ public class NoteDaoJUnitTest {
     @Test
     public void testFindByDVD() {
 
-        Dvd addedMiracle = dvdDao.create(miracle);
+        Dvd addedMiracle = dvdDao.insert(miracle);
 
-        Note addedMiracleNote1 = noteDao.create(miracleNote1);
-        Note addedMiracleNote2 = noteDao.create(miracleNote2);
+        Note addedMiracleNote1 = noteDao.insert(miracleNote1);
+        Note addedMiracleNote2 = noteDao.insert(miracleNote2);
 
-        List<Note> addedDVD1NoteList = noteDao.findByDVD(addedMiracle);
+        List<Note> addedDVD1NoteList = noteDao.findByDvd(addedMiracle);
 
         Assert.assertNotNull(addedDVD1NoteList);
         Assert.assertEquals(2, addedDVD1NoteList.size());
@@ -183,13 +183,13 @@ public class NoteDaoJUnitTest {
         Dvd testDVD3 = new Dvd();
         testDVD3.setTitle("Test Dvd 3");
 
-        dvdDao.create(testDVD1);
-        dvdDao.create(testDVD2);
-        dvdDao.create(testDVD3);
+        dvdDao.insert(testDVD1);
+        dvdDao.insert(testDVD2);
+        dvdDao.insert(testDVD3);
 
         Note testNote = new Note();
 
-        noteDao.create(testNote);
+        noteDao.insert(testNote);
 
         double averageNumberOfNotes = noteDao.getAverageNumberOfNotes();
 

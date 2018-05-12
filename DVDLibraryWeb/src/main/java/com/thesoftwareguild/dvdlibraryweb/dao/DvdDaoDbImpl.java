@@ -35,7 +35,7 @@ public class DvdDaoDbImpl implements DvdDao {
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public Dvd create(Dvd dvd) {
+    public Dvd insert(Dvd dvd) {
 
         jdbcTemplate.update(SQL_INSERT_DVD,
                 dvd.getTitle(),
@@ -52,7 +52,7 @@ public class DvdDaoDbImpl implements DvdDao {
     }
 
     @Override
-    public Dvd read(long id) {
+    public Dvd retrieve(long id) {
 
         return jdbcTemplate.queryForObject(SQL_SELECT_DVD, new DVDMapper(), id);
 
@@ -81,7 +81,7 @@ public class DvdDaoDbImpl implements DvdDao {
     }
 
     @Override
-    public List<Dvd> list() {
+    public List<Dvd> all() {
 
         return jdbcTemplate.query(SQL_SELECT_ALL_DVD, new DVDMapper());
 

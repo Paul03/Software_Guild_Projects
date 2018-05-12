@@ -27,7 +27,7 @@ public class HomeController {
     @RequestMapping(value="/", method= RequestMethod.GET)
     public String home(Map model) {
 
-        List<Dvd> dvdList = dvdDao.list();
+        List<Dvd> dvdList = dvdDao.all();
 
         model.put("dvdList", dvdList);
         model.put("addDVDCommand", new AddDvdCommand());

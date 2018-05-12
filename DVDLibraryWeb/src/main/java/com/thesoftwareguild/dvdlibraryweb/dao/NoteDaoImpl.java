@@ -36,7 +36,7 @@ public class NoteDaoImpl implements NoteDao {
     }
 
     @Override
-    public Note create(Note note) {
+    public Note insert(Note note) {
 
         note.setNoteId(nextId);
 
@@ -51,7 +51,7 @@ public class NoteDaoImpl implements NoteDao {
     }
 
     @Override
-    public Note read(long id) {
+    public Note retrieve(long id) {
 
         for (Note n : noteLibrary) {
             if (n.getNoteId() == id) {
@@ -135,7 +135,7 @@ public class NoteDaoImpl implements NoteDao {
 
                 note.setNoteId(noteId);
                 note.setNoteText(stringParts[1]);
-                note.setDvd(dvdDao.read(dvdId));
+                note.setDvd(dvdDao.retrieve(dvdId));
 
                 tempNoteList.add(note);
 
@@ -150,7 +150,7 @@ public class NoteDaoImpl implements NoteDao {
     }
 
     @Override
-    public List<Note> findByDVD(Dvd dvd) {
+    public List<Note> findByDvd(Dvd dvd) {
 
         List<Note> dvdNotes = new ArrayList<>();
 
@@ -167,7 +167,7 @@ public class NoteDaoImpl implements NoteDao {
     @Override
     public double getAverageNumberOfNotes() {
 
-        List<Dvd> tempDvdList = dvdDao.list();
+        List<Dvd> tempDvdList = dvdDao.all();
 
         return ((double) noteLibrary.size()) / ((double) tempDvdList.size());
 

@@ -5,17 +5,17 @@ import com.thesoftwareguild.dvdlibraryweb.dto.Note;
 import java.util.List;
 
 public interface NoteDao {
-    
-    Note create(Note note);
-    
-    Note read(long id);
-    
+
+    Note insert(Note note);
+
+    Note retrieve(long id);
+
     void update(Note note);
-    
+
     void delete(Note note);
-    
-    List<Note> findByDVD(Dvd dvd);
-    
+
+    List<Note> findByDvd(Dvd dvd);
+
     double getAverageNumberOfNotes();
-    
+
 }

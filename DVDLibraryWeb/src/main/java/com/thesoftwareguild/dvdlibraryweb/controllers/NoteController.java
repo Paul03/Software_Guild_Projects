@@ -28,14 +28,14 @@ public class NoteController {
     @ResponseBody
     public Note show(@PathVariable("id") Integer noteId) {
 
-        return noteDao.read(noteId);
+        return noteDao.retrieve(noteId);
 
     }
 
     @RequestMapping(value="add/{dvdId}", method=RequestMethod.GET)
     public String addNote(@PathVariable("dvdId") Integer dvdId, Map model) {
 
-        Dvd dvd = dvdDao.read(dvdId);
+        Dvd dvd = dvdDao.retrieve(dvdId);
         model.put("dvd", dvd);
 
         return "addNote";
@@ -46,14 +46,14 @@ public class NoteController {
     @ResponseBody
     public Note addNote(@Valid @RequestBody Note note) {
 
-        return noteDao.create(note);
+        return noteDao.insert(note);
 
     }
 
     @RequestMapping(value="edit/{id}", method=RequestMethod.GET)
     public String edit(@PathVariable("id") Integer noteId, Map model) {
 
-        Note note = noteDao.read(noteId);
+        Note note = noteDao.retrieve(noteId);
         model.put("note", note);
 
         return "editNote";
@@ -72,7 +72,7 @@ public class NoteController {
     @RequestMapping(value="delete/{id}", method=RequestMethod.GET)
     public String delete(@PathVariable("id") Integer id, Map model) {
 
-        Note note = noteDao.read(id);
+        Note note = noteDao.retrieve(id);
         model.put("note", note);
 
         return "deleteNote";

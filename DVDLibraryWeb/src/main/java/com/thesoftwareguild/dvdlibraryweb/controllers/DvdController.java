@@ -38,8 +38,8 @@ public class DvdController {
     @ResponseBody
     public ShowDvdViewModel show(@PathVariable("id") Integer dvdId) {
 
-        Dvd dvd = dvdDao.read(dvdId);
-        List<Note> dvdNotes = noteDao.findByDVD(dvd);
+        Dvd dvd = dvdDao.retrieve(dvdId);
+        List<Note> dvdNotes = noteDao.findByDvd(dvd);
 
         ShowDvdViewModel showDvdViewModel = new ShowDvdViewModel();
 
@@ -54,13 +54,13 @@ public class DvdController {
     @ResponseBody
     public Dvd create(@Valid @RequestBody AddDvdCommand commandObject) {
 
-        Dvd dvd = dvdDao.create( commandObject.toDvd() );
+        Dvd dvd = dvdDao.insert( commandObject.toDvd() );
 
         if (!commandObject.getNoteText().trim().equals("")){
 
             Note note = commandObject.toNote();
             note.setDvd(dvd);
-            noteDao.create(note);
+            noteDao.insert(note);
         }
 
         return dvd;
@@ -82,9 +82,9 @@ public class DvdController {
     @ResponseBody
     public Dvd delete(@PathVariable("id") Integer id) {
 
-        Dvd dvd = dvdDao.read(id);
+        Dvd dvd = dvdDao.retrieve(id);
 
-        List<Note> dvdNoteList = noteDao.findByDVD(dvd);
+        List<Note> dvdNoteList = noteDao.findByDvd(dvd);
 
         for (Note n : dvdNoteList) {
             noteDao.delete(n);

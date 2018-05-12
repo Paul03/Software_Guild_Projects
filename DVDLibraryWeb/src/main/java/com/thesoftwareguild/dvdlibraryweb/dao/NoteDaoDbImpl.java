@@ -29,7 +29,7 @@ public class NoteDaoDbImpl implements NoteDao {
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public Note create(Note note) {
+    public Note insert(Note note) {
 
         jdbcTemplate.update(SQL_INSERT_NOTE,
                 note.getNoteText(),
@@ -44,7 +44,7 @@ public class NoteDaoDbImpl implements NoteDao {
     }
 
     @Override
-    public Note read(long id) {
+    public Note retrieve(long id) {
 
         return jdbcTemplate.queryForObject(SQL_SELECT_NOTE, new NoteMapper(), id);
 
@@ -68,7 +68,7 @@ public class NoteDaoDbImpl implements NoteDao {
     }
 
     @Override
-    public List<Note> findByDVD(Dvd dvd) {
+    public List<Note> findByDvd(Dvd dvd) {
 
         return jdbcTemplate.query(SQL_SELECT_BY_DVD, new NoteMapper(), dvd.getDvdId());
 
@@ -86,7 +86,7 @@ public class NoteDaoDbImpl implements NoteDao {
 
             Integer dvdId = resultSet.getInt("dvd_id");
 
-            Dvd dvd = dvdDao.read(dvdId);
+            Dvd dvd = dvdDao.retrieve(dvdId);
 
             Note note = new Note();
 
