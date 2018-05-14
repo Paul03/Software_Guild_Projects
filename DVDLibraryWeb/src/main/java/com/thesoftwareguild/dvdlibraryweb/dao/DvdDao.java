@@ -24,11 +24,9 @@ public interface DvdDao {
 
     List<Dvd> searchByStudio(String studioName);
 
-    Double averageAge();
+    List<Dvd> findNewestDvd();
 
-    List<Dvd> findNewestDVD();
-
-    List<Dvd> findOldestDVD();
+    List<Dvd> findOldestDvd();
 
     List<Dvd> searchByTitle(String title);
 

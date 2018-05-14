@@ -355,7 +355,7 @@ public class DvdDaoJUnitTest {
         dvdDao.insert(zootopya);
         dvdDao.insert(GodsNotDead);
 
-        List<Dvd> newestDvd = dvdDao.findNewestDVD();
+        List<Dvd> newestDvd = dvdDao.findNewestDvd();
 
         Assert.assertEquals(newestDvd.get(0).getTitle(), zootopya.getTitle());
 
@@ -369,7 +369,7 @@ public class DvdDaoJUnitTest {
         dvdDao.insert(zootopya);
         dvdDao.insert(GodsNotDead);
 
-        List<Dvd> oldestDvd = dvdDao.findOldestDVD();
+        List<Dvd> oldestDvd = dvdDao.findOldestDvd();
 
         Assert.assertEquals(oldestDvd.get(0).getTitle(), miracle.getTitle());
 

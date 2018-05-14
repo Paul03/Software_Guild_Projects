@@ -328,32 +328,7 @@ public class DvdDaoImpl implements DvdDao {
     }
 
     @Override
-    public Double averageAge() {
-
-        Double result = 0.0;
-        Double totalAge = 0.0;
-        Double movieCount = 0.0;
-
-        for (Dvd d : dvdLibrary) {
-            try {
-
-                double age = currentYear - d.getReleaseDate().getYear();
-                totalAge += age;
-                movieCount++;
-
-            } catch (NullPointerException ex) {
-
-            }
-        }
-
-        result = totalAge / movieCount;
-
-        return result;
-
-    }
-
-    @Override
-    public List<Dvd> findNewestDVD() {
+    public List<Dvd> findNewestDvd() {
 
         List<Dvd> result = new ArrayList();
         Integer newestYear = 0;
@@ -385,7 +360,7 @@ public class DvdDaoImpl implements DvdDao {
     }
 
     @Override
-    public List<Dvd> findOldestDVD() {
+    public List<Dvd> findOldestDvd() {
 
         List<Dvd> result = new ArrayList();
         Integer oldestYear = 9999999;
