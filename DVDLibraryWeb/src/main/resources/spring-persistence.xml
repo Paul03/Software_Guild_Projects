@@ -30,6 +30,9 @@
         <constructor-arg ref="jdbcTemplate" />
     </bean>
 
+    <bean id="userDao" class="com.thesoftwareguild.dvdlibraryweb.dao.UserDaoDbImpl">
+    </bean>
+
     <!--View Selectors-->
 
     <!--Jquery/JSP implementation of view-->
